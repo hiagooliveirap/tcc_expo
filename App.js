@@ -2,13 +2,12 @@ import { StatusBar } from 'expo-status-bar';''
 import { StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants';
 
-import Teste from './src/cadCliente';
-import styles from './src/produtos/styles';
+// import Teste from './src/cadCliente';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Teste />      
+      <Text>Hello World</Text>     
       <StatusBar style="light" />
     </View>
   );
@@ -17,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#8b0000',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
