@@ -4,7 +4,7 @@ import styles from './styles';
 export default function Login() {
     return(
         <View style={styles.container}>
-            <Text>a</Text>
+            <Text style={styles.text}>abc</Text>
         </View>
     );
 }

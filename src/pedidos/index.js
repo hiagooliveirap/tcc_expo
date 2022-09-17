@@ -4,7 +4,7 @@ import styles from './styles';
 export default function Pedidos() {
     return(
         <View style={styles.container}>
-            <Text>a</Text>
+            <Text>abc</Text>
         </View>
     );
 }
