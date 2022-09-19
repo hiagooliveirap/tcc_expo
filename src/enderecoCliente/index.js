@@ -3,7 +3,7 @@ import styles from './styles';
 
 export default function EnderecoCliente() {
     return(
-        <View style={styles.container}>
+        <View>
             <Text>a</Text>
         </View>
     );
