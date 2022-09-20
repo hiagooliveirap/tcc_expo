@@ -5,7 +5,7 @@ import styles from './styles';
 export default function Favoritos() {
     return(
         <View style={styles.container}>
-            <Text>Favorito</Text>
+            {/* <Text>Favoritos</Text> */}
             <TextInput placeholder='Pesquisar por ...'></TextInput>
         </View>
     );
