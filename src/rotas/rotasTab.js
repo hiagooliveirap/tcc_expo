@@ -13,7 +13,7 @@ export default function RotasTab() {
     return(
             <Tab.Navigator>
                 <Tab.Screen name='Início' component={Main} />
-                <Tab.Screen name='Pedidos' component={Pedidos} />
+                <Tab.Screen name='Favoritos' component={Pedidos} />
                 <Tab.Screen name='Produtos' component={Produtos} />
                 <Tab.Screen name='Perfil' component={Perfil} />
             </Tab.Navigator>
