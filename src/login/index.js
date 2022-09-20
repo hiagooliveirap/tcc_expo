@@ -5,8 +5,11 @@ export default function Login({ navigation }) {
     return(
         <View style={styles.container}>
             <Text style={styles.text}>abc</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Tab')} >
                 <Text>Acessar tela</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
+                <Text>Tela de perfil</Text>
             </TouchableOpacity>
         </View>
     );
