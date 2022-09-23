@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
         marginTop:15,
         marginLeft:7  
     },
-    body:{
-        top: 100,
-        position:'relative',
-        backgroundColor:'blue',
-        width:'100%',
-        height:'70%',
-    },
+    // body:{
+    //     top: 100,
+    //     position:'relative',
+    //     backgroundColor:'blue',
+    //     width:'100%',
+    //     height:'70%',
+    // },
     text: {
         fontSize: 16,
     },

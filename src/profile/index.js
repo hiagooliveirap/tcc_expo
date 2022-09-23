@@ -14,9 +14,9 @@ export default function Perfil() {
                     </View>
                 </View>
 
-                {/* <View style={styles.body}>
+                <View style={styles.body}>
 
-                </View> */}     
+                </View>    
                 
             </View>
         </View>
