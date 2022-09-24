@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
     },
+    textInput: {
+        fontSize: 20,
+    }
 });
 
 export default styles;
