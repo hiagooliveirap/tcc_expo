@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     foto:{
         marginBottom:'3%',
         backgroundColor:'red',
-        height:'100%',
-        width: '30%',
+        height:80,
+        width: 80,
         borderRadius:100,
     },
     info:{

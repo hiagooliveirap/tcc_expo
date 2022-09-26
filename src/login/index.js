@@ -11,6 +11,9 @@ export default function Login({ navigation }) {
             <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                 <Text>Tela de perfil</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Favoritos')}>
+                <Text>Favoritos</Text>
+            </TouchableOpacity>
         </View>
     );
 }
