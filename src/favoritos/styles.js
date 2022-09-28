@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         flex: 1,
         //justifyContent: 'center',
         //alignItems: 'center',
-        backgroundColor: '#F7DED9',
+        backgroundColor: '#DEDADA',
         margin: 13,
         borderRadius: 20,
         width: '96%',
