@@ -16,6 +16,7 @@ export default function RotasTab() {
                 tabBarActiveTintColor: '#FFA500',                 
                 tabBarInactiveTintColor: 'gray',
                 headerShown: false,
+                tabBarHideOnKeyboard: true,
             }}>
 
                 <Tab.Screen 

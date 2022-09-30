@@ -10,6 +10,7 @@ import CadastroUsuario from '../cadCliente';
 import CadastroEnderecoCliente from '../enderecoCliente';
 import Perfil from '../profile';
 import Favoritos from '../favoritos';
+import ItemProduto from '../itemProduto';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ export default function Rotas() {
                 <Stack.Screen name="CadastroEnderecoCliente" component={CadastroEnderecoCliente} />
                 <Stack.Screen name="Perfil" component={Perfil} />
                 <Stack.Screen name="Favoritos" component={Favoritos} />
+                <Stack.Screen name="ItemProduto" component={ItemProduto} />
             </Stack.Navigator>
             <StatusBar style='light' />
         </NavigationContainer>
