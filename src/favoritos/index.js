@@ -1,7 +1,7 @@
 import { Text, View, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
-export default function Favoritos() {
+export default function Favoritos({navigation}) {
     return(
         <View style={styles.container}>
             <View style={styles.caixa}> 
@@ -34,9 +34,9 @@ export default function Favoritos() {
                 </View>
 
                 <View style={styles.footer}>
-                    <TouchableOpacity style={styles.sair}>
+                    <TouchableOpacity style={styles.sair} onPress={()=> navigation.navigate('Tab')}>
                         <View>
-                        <Text style={styles.sairTexto}>Teste</Text>
+                        <Text style={styles.sairTexto}>Sair</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
