@@ -1,7 +1,7 @@
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View,TouchableOpacity,Image } from 'react-native';
 import styles from './styles';
 
-export default function Perfil() {
+export default function Perfil({navigation}) {
     return(
         <View style={styles.container}>
             <View style={styles.caixa}> 
@@ -17,26 +17,26 @@ export default function Perfil() {
 
                 <View style={styles.body}>
                     <View style={styles.menu}>
-                        <TouchableOpacity>
-                            <Text style={styles.textoMenu}>Teste</Text>
+                        <TouchableOpacity style={styles.icon} onPress={()=> navigation.navigate('Favoritos')}>
+                            <Image style={{width:25 , height:25}} source={require('../../assets/icon/estrela.png')} />
+                            <Text style={styles.textoMenu}>Favoritos</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text style={styles.textoMenu}>Teste</Text>
+
+                        <TouchableOpacity style={styles.icon}>
+                        <Image style={{width:25 , height:25}} source={require('../../assets/icon/info.png')} />
+                            <Text style={styles.textoMenu}>Minhas informações</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text style={styles.textoMenu}>Teste</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text style={styles.textoMenu}>Teste</Text>
+
+                        <TouchableOpacity style={styles.icon}>
+                        <Image style={{width:25 , height:25}} source={require('../../assets/icon/config.png')} />
+                            <Text style={styles.textoMenu}>Configurações</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
 
                 <View style={styles.footer}>
                     <TouchableOpacity style={styles.sair}>
-                        <View>
-                        <Text style={styles.sairTexto}>Teste</Text>
-                        </View>
+                        <View><Text style={styles.sairTexto}>Sair</Text></View>
                     </TouchableOpacity>
                 </View>
                 

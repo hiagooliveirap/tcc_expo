@@ -10,13 +10,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
     },
-    textDestaque: {
-        fontSize: 20,
-        fontWeight: "bold",
-        marginLeft: 15,
-        marginBottom: 10,
-        marginTop: 50,
-    },
     containerInputBusca: {
         alignItems: "center",
     },
@@ -24,7 +17,7 @@ const styles = StyleSheet.create({
         width: '95%',
         justifyContent: "center",
         marginTop: 10,        
-        height: 55,    
+        height: 40,    
         borderRadius: 7,
         backgroundColor: '#F6F5F4',
         fontSize: 12,
@@ -54,6 +47,11 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ECECEC',
         borderRadius: 7,
+    },
+    swipperContent:{
+        flexDirection:'row',
+        height:250,
+        width:'100%',
     },
 });
 
