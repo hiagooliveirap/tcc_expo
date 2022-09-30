@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         // marginTop:'3%',
         // marginBottom:'3%',
         marginLeft:'5%',
-        fontSize:17,
+        fontSize:19,
         fontWeight:'bold'
     },
     textoTitulo:{
@@ -140,6 +140,8 @@ const styles = StyleSheet.create({
         marginBottom:'3%',
         width:'90%',
         marginLeft:'5%',
+        paddingTop:'2%',
+        paddingBottom:'2%',
         borderRadius:3,
         shadowOffset:{
             width:0,

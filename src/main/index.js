@@ -1,13 +1,19 @@
+import React from 'react';
 import { BottomTabView } from '@react-navigation/bottom-tabs';
 import { Text, View, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
 import styles from './styles';
 
+import SwiperComponent from './components/swiper.js';
+
 export default function Main() {
     return(
         <View style={styles.container}>
-            <Text style={styles.textDestaque}>Destaques</Text>
             <View style={styles.containerInputBusca}>                
                 <TextInput style={styles.inputBusca} placeholder='O que deseja?' />
+            </View>
+
+            <View style={styles.swipperContent}>
+             <SwiperComponent /> 
             </View>
             <View style={styles.containerTextoCategoria}>
                 <Text style={{fontWeight: 'bold'}}>Categorias</Text>                    

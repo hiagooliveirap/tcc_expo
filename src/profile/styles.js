@@ -11,25 +11,16 @@ const styles = StyleSheet.create({
     },
     caixa: {
         flex: 1,
-        //justifyContent: 'center',
-        //alignItems: 'center',
-        backgroundColor: '#D6D6D6',
+        backgroundColor: '#e6e6e6',
         margin: 13,
         borderRadius: 20,
         width: '96%',
-        // shadowRadius:12,
-        // shadowColor:'black',
         flexDirection:'column'
     },
     header:{
-        //paddingTop:2,
         marginTop:10,
         marginLeft:10,
-        //flex:1,
-        //backgroundColor:'#000',
-        //width:'100%',
         height:'15%',
-        //alignItems:'flex-end',
         justifyContent:'flex-start',
         flexDirection:'row',
         borderBottomColor: 'black',
@@ -38,7 +29,7 @@ const styles = StyleSheet.create({
         
     },
     borda:{
-        marginTop:5,
+        marginTop:18,
         marginLeft:'2%',
         width:'95%',
         height:2,
@@ -49,8 +40,8 @@ const styles = StyleSheet.create({
     foto:{
         marginBottom:'3%',
         backgroundColor:'red',
-        height:80,
-        width: 80,
+        height:90,
+        width: 90,
         borderRadius:100,
     },
     info:{
@@ -81,19 +72,22 @@ const styles = StyleSheet.create({
         // height:'70%',
     },
     menu:{
-        flex:1,
-        position:'relative',
-        //backgroundColor:'yellow',
-        marginBottom:'20%'
+        
+    },
+    icon:{
+        display:'flex',
+        flexDirection:'row', 
+        alignItems:'center',
+        marginLeft:20,
+        padding:25,
+        marginTop:20,
+
     },
     textoMenu:{
-        //backgroundColor:'brown',
-        marginTop:'3%',
-        marginBottom:'3%',
-        justifyContent:'center',
-        alignItems:'center',
-        fontSize:30,
-        fontWeight:'bold'
+        alignSelf:'flex-start',
+        marginLeft:30,
+        fontSize:24,
+        //fontWeight:'bold'
     },
     footer:{
         //flex:1,
@@ -121,41 +115,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
     },
-    containerImage: {
-        width: '100%',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-    },
-    borderProfile: {
-        width: 110,
-        height: 110,
-        borderRadius: 200 / 2
-    },    
-    textNomeUsuario: {
-        marginTop: 20,
-        marginBottom: 25,
-        fontSize: 20,
-        fontWeight: "bold",
-        width: '100%',
-        textAlign: 'center',
-    },
-    imageItens: {
-        marginLeft: 10,
-    },
-    containerItem: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-start",        
-        width: '100%',
-        height: 70,
-        borderBottomWidth: 0.3,
-        borderBottomColor: '#696969',
-    },    
-    textItemPrincipal: {
-        fontWeight: 'bold',
-        marginLeft: 12,
-        color: '#696969'
-    },
 });
 
-export default styles;
+export default styles
