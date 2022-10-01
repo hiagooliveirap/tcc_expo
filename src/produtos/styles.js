@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     },
     flat: {
         marginTop: 20,
+        marginBottom: Dimensions.get('window').height / 5,
     },
     containerInput: {
         flexDirection: 'row',
