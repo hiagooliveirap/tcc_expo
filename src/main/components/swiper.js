@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   imagens:{
     width: '90%',
-    height: 180,
+    height: 150,
     borderRadius:20
   }
 })

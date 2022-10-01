@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
         height: 40,    
         borderRadius: 7,
         backgroundColor: '#F6F5F4',
-        fontSize: 12,
+        fontSize: 18,
         borderWidth: 0,
         paddingLeft: 10,  
-        color: '#C5C5C6',
+        color: '#000',
     },
     containerTextoCategoria: {
         width: '94%',
