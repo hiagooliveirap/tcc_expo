@@ -6,9 +6,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         padding: 8,
         width: '100%',
-    },
-    text: {
-        fontSize: 16,
+
     },
     containerInputBusca: {
         alignItems: "center",
@@ -16,19 +14,19 @@ const styles = StyleSheet.create({
     inputBusca: {
         width: '95%',
         justifyContent: "center",
-        marginTop: 10,        
-        height: 40,    
+        marginTop: 10,
+        height: 40,
         borderRadius: 7,
         backgroundColor: '#F6F5F4',
         fontSize: 12,
         borderWidth: 0,
-        paddingLeft: 10,  
+        paddingLeft: 10,
         color: '#C5C5C6',
     },
     containerTextoCategoria: {
         width: '94%',
         marginLeft: 15,
-        marginTop: 20,        
+        marginTop: 20,
         flexDirection: "row",
         justifyContent: 'space-between',
         alignItems: "flex-end",
@@ -39,8 +37,8 @@ const styles = StyleSheet.create({
         maxHeight: 100,
     },
     containerItemCategoria: {
-        alignItems: "center", 
-        margin: 5,       
+        alignItems: "center",
+        margin: 5,
         padding: 5,
         height: 90,
         width: 120,
@@ -48,11 +46,46 @@ const styles = StyleSheet.create({
         borderColor: '#ECECEC',
         borderRadius: 7,
     },
-    swipperContent:{
-        flexDirection:'row',
-        height:250,
-        width:'100%',
+    swipperContent: {
+        flexDirection: 'row',
+        height: 250,
+        width: '100%',
+
     },
+    header: {
+        paddingHorizontal: 15,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        marginVertical: 20,
+    },
+    inputArea: {
+        paddingHorizontal: 15,
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '98%',
+        backgroundColor: '#fff',
+        elevation: 2,
+        height: 37,
+        borderRadius: 10,
+    },
+    input: {
+        paddingHorizontal: 15,
+        fontSize: 13,
+        width: '90%',
+    },
+    contentNew: {
+        flexDirection: 'row',
+        width: '100%',
+        alignItems: 'center',
+    },
+    title: {
+        paddingHorizontal: 15,
+        fontSize: 18,
+        color: '#4f4a4a',
+        marginTop: 10,
+    }
 });
 
 export default styles;

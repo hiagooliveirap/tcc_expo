@@ -1,71 +1,74 @@
 import React from 'react';
 import { BottomTabView } from '@react-navigation/bottom-tabs';
 import { Text, View, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { useFonts, Poppins_400Regular, Poppins_600SemiBold, Poppins_500Medium } from '@expo-google-fonts/poppins';
 import styles from './styles';
+import { Feather } from '@expo/vector-icons'
 
 import SwiperComponent from './components/swiper.js';
+import New from '../main/components/New';
 
 export default function Main() {
-    return(
+
+    let [fontsLoaded] = useFonts({
+        Poppins_400Regular,
+        Poppins_600SemiBold,
+        Poppins_500Medium,
+    });
+
+    if (!fontsLoaded) {
+        return null;
+    }
+
+    return (
         <View style={styles.container}>
-            <View style={styles.containerInputBusca}>                
+            <View style={styles.containerInputBusca}>
                 <TextInput style={styles.inputBusca} placeholder='O que deseja?' />
             </View>
 
+            <View style={styles.contentNew}>
+                <Text style={styles.title}>Promoção</Text>
+            </View>
             <View style={styles.swipperContent}>
-             <SwiperComponent /> 
-            </View>
-            <View style={styles.containerTextoCategoria}>
-                <Text style={{fontWeight: 'bold'}}>Categorias</Text>                    
-
-                <TouchableOpacity>
-                    <Text style={{color: '#FFA500', fontWeight: 'bold'}}>Ver Tudo</Text>
-                </TouchableOpacity>
+                <SwiperComponent />
             </View>
 
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true} contentContainerStyle={styles.containerAllCategoria} showsVerticalScrollIndicator={false}>
-                <TouchableOpacity style={styles.containerItemCategoria}>
-                    <Image source={require('../../assets/categoria-burguer.png')} />
-                    <Text style={{marginTop: 2}}>Lanches</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.containerItemCategoria}>
-                    <Image source={require('../../assets/categoria-pizza.png')} />
-                    <Text style={{marginTop: 2}}>Pizzas</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.containerItemCategoria}>
-                    <Image source={require('../../assets/categoria-porcao.png')} />
-                    <Text style={{marginTop: 2}}>Porções</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.containerItemCategoria}>
-                    <Image source={require('../../assets/categoria-burguer.png')} />
-                    <Text style={{marginTop: 2}}>Hambúrguer</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.containerItemCategoria}>
-                    <Image source={require('../../assets/categoria-burguer.png')} />
-                    <Text style={{marginTop: 2}}>Hambúrguer</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.containerItemCategoria}>
-                    <Image source={require('../../assets/categoria-burguer.png')} />
-                    <Text style={{marginTop: 2}}>Hambúrguer</Text>
-                </TouchableOpacity>
-            </ScrollView>
-
-            <View style={styles.containerTextoCategoria}>
-                    <Text style={{fontWeight: 'bold'}}>Mais populares</Text>                    
-
-                <TouchableOpacity>
-                    <Text style={{color: '#FFA500', fontWeight: 'bold'}}>Ver Tudo</Text>
-                </TouchableOpacity>
+            <View style={styles.contentNew}>
+                <Text style={styles.title}>Novidades</Text>
             </View>
 
-            <View style={{height: 380}}>
+            <ScrollView horizontal={true}
+                showsVerticalScrollIndicator={false}
+                style={{ backgroundColor: '#FFF' }
+                }
+            >
 
-            </View>
-        </View>
+
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 15 }} >
+
+                    <New
+                        cover={require('../../assets/food/lanche.png')}
+                        name="X-Bacon"
+                        description="Lanche do bãooo."
+
+                    />
+                    <New
+                        cover={require('../../assets/food/lanche.png')}
+                        name="X-Salada"
+                        description="Lanche do bãooo."
+                        onPress={() => navigation.navigate('Sobre')}
+                    />
+                    <New
+                        cover={require('../../assets/food/lanche.png')}
+                        name="Porcão"
+                        description="Lanche do bãooo."
+                        onPress={() => { }}
+                    />
+
+                </ScrollView>
+            </ScrollView >
+
+
+        </View >
     );
 }
