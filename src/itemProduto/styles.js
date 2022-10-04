@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     containerHeader: {
-        height: 400,        
+        height: 400, 
+        marginBottom: 20,               
     },
     imgPrincipal: {        
         width: '100%',
@@ -23,11 +24,21 @@ const styles = StyleSheet.create({
         marginLeft: 12,
         marginRight: 12,
     },
+    containerTituloPreco: {
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        alignItems: "flex-end",
+    },
     TextTitulo: {
         fontSize: 24,
         fontWeight: "bold",
         marginLeft: 16,
         marginRight: 14,
+    },
+    TextPreco: {
+        marginRight: 16,
+        fontSize: 16,
+        fontWeight: "bold",
     },
     TextDescricao: {
         fontSize: 16,        

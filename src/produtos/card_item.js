@@ -3,20 +3,24 @@ import { TouchableOpacity, View, Image, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
-export default function CardItem({item, escolheItem}) {
+export default function CardItem({item, navigation}) {
     return(
-        <TouchableOpacity>
-            <View style={[styles.itemPesquisa, styles.elevation]}>
+        <TouchableOpacity style={styles.itemPesquisa} onPress={() => navigation.navigate('ItemProduto', {item})}>            
                 <Image style={styles.img} source={item.img}/>                
-                <View style={styles.containerAvaliacao}>
-                    <Text style={styles.txtValor}>{item.valor}</Text>
-                    <View style={styles.containerAvaliacaoItem}>
-                        <Ionicons name='star' size={16} color='#FEC432' />
-                        <Text style={styles.txtAvaliacao}>{item.avaliacao}</Text>
+                <Text numberOfLines={1} ellipsizeMode='tail' style={styles.txtNome} >{item.nome}</Text>                                                                           
+                <View style={styles.containerAvaliacao}>                    
+                    <View style={styles.containerAvaliacaoItem}>                        
+                        <Ionicons name='star' size={12} color='#FEC432' style={{marginRight: 2}}/>
+                        <Ionicons name='star' size={12} color='#FEC432' style={{marginRight: 2}}/>
+                        <Ionicons name='star' size={12} color='#FEC432' style={{marginRight: 2}}/>
+                        <Ionicons name='star' size={12} color='#FEC432' style={{marginRight: 2}}/>
+                        <Ionicons name='star' size={12} color='#FEC432' style={{marginRight: 2}}/>
                     </View>
                 </View>
-                <Text style={styles.txtNome} adjustsFontSizeToFit>{item.nome}</Text>                                                
-            </View>
+                <View style={styles.containerValor}>
+                    <Text style={{ color: '#FFA500', marginTop: 6, fontSize: 12, fontWeight: 'bold'}}>R$</Text>            
+                    <Text style={styles.txtValor}>{item.valor}</Text>            
+                </View>    
         </TouchableOpacity>        
     )
 }

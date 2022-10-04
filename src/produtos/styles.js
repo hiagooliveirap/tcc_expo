@@ -4,8 +4,8 @@ import { StyleSheet, Dimensions  } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         backgroundColor: '#FFF',
         padding: 8,
         width: '100%',                    
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         paddingLeft: 12,
         paddingRight: 12,
-        marginTop: 200,
+        marginTop: 50,
         backgroundColor: '#F6F5F4',   
     },
     inputBusca: {
@@ -55,24 +55,24 @@ const styles = StyleSheet.create({
         paddingBottom: 20, 
         borderWidth: 1, 
         borderColor: '#E0E0E0',         
-        borderRadius: 5,                      
+        borderRadius: 5,    
+        justifyContent: 'center',
+        alignItems: 'center',                  
     },
     txtNome: {
-        // fontSize: RFPercentage(2.8),
-        marginTop: 6,     
+        marginTop: 20,     
         fontWeight: "bold",           
         marginLeft: 12,          
         marginRight: 5,
-        fontSize: 16,
-        height: '30%',
-        color: '#AFAFAF',
+        fontSize: 15,
+        height: '10%',
+        color: '#000',
     },
     txtValor: {
         fontWeight: "bold",
         fontSize: 20,
         alignItems: 'flex-start',  
-        marginLeft: 12,  
-        marginTop: 12,      
+        marginLeft: 3,  
     },
     img: {        
         width: '100%',
@@ -87,7 +87,8 @@ const styles = StyleSheet.create({
     containerAvaliacao: {
         flexDirection: "row",        
         justifyContent: 'space-between',
-        alignItems: "flex-start",        
+        alignItems: "flex-start", 
+        marginLeft: 12,
     },
     txtAvaliacao: {
         color: '#FEC432',        
@@ -95,10 +96,8 @@ const styles = StyleSheet.create({
         fontSize: 17,       
     },
     containerAvaliacaoItem: {
-        flexDirection: "row",
-        marginTop: 15,
-        marginRight: 12,         
-        alignItems: "center",
+        flexDirection: "row",        
+        alignItems: "center",                
     },
     containerFiltros: {
         width: '100%',
@@ -131,6 +130,34 @@ const styles = StyleSheet.create({
     textFiltros: {
         color: '#FFA500',
         marginLeft: 6,
+    },
+    containerValor: {
+        flexDirection: "row",
+        alignItems: "center",    
+        marginLeft: 16,
+        marginTop: 10,    
+    },
+
+    /* Horizontal */
+
+    containerHorizontal: {
+        width: '95%', 
+        flexDirection: "row",
+        alignItems: "center",
+        height: 120,  
+        margin: 7,        
+        marginBottom: 20,
+        borderWidth: 1, 
+        borderColor: '#E0E0E0',         
+        borderRadius: 20,              
+    },
+    imgHorizontal: {
+        width: '25%',
+        height: '80%',
+        marginLeft: 12,                          
+        borderRadius: 20,
+        borderBottomColor: '#000',
+        borderColor: '#E0E0E0',
     },
 });
 
