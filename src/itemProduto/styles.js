@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     containerHeader: {
-        height: 400, 
-        marginBottom: 20,               
+        height: 400,
     },
     imgPrincipal: {        
         width: '100%',
