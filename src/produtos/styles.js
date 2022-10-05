@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         // alignItems: 'center',
-        backgroundColor: '#FFF',
+        backgroundColor: '#F6f6f6',
         padding: 8,
         width: '100%',                    
     },
@@ -147,17 +147,30 @@ const styles = StyleSheet.create({
         height: 120,  
         margin: 7,        
         marginBottom: 20,
-        borderWidth: 1, 
-        borderColor: '#E0E0E0',         
-        borderRadius: 20,              
+        borderRadius: 25,   
+        backgroundColor: '#FFF',           
     },
     imgHorizontal: {
         width: '25%',
         height: '80%',
         marginLeft: 12,                          
-        borderRadius: 20,
+        borderRadius: 25,
         borderBottomColor: '#000',
         borderColor: '#E0E0E0',
+    },
+    containerValorHorizontal: {
+        flex: 1,
+        marginRight: 15,
+        marginLeft: 20,
+    },
+    txtNomeHorizontal: {
+        marginBottom: 15,
+        fontSize: 18,
+        fontWeight: "bold",
+    },
+    txtValorHorizontal: {
+        color: '#FFA500',
+        fontWeight: "600",
     },
 });
 

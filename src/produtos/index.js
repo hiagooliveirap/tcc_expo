@@ -72,7 +72,7 @@ export default function Produtos({ navigation }) {
         <SafeAreaView>
           <FlatList 
             data={produtos} 
-            renderItem={ ({item}) => <CardItem item={item} navigation={navigation} /> } 
+            renderItem={ ({item}) => <CardItemHorizontal item={item} navigation={navigation} /> } 
             keyExtractor={ item => item.id} 
             numColumns={numColumns} 
             style={styles.flat}
