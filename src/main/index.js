@@ -37,38 +37,40 @@ export default function Main() {
                 <Text style={styles.title}>Novidades</Text>
             </View>
 
-            <ScrollView horizontal={true}
-                showsVerticalScrollIndicator={false}
-                style={{ backgroundColor: '#FFF' }
-                }
-            >
+            <View>
+                <ScrollView horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    style={{ backgroundColor: '#FFF' }
+                    }
+                >
 
 
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 15 }} >
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 15 }} >
 
-                    <New
-                        cover={require('../../assets/food/lanche.png')}
-                        name="X-Bacon"
-                        description="Lanche do bãooo."
+                        <New
+                            cover={require('../../assets/food/lanche.png')}
+                            name="X-Bacon"
+                            description="Lanche do bãooo."
 
-                    />
-                    <New
-                        cover={require('../../assets/food/lanche.png')}
-                        name="X-Salada"
-                        description="Lanche do bãooo."
-                        onPress={() => navigation.navigate('Sobre')}
-                    />
-                    <New
-                        cover={require('../../assets/food/lanche.png')}
-                        name="Porcão"
-                        description="Lanche do bãooo."
-                        onPress={() => { }}
-                    />
+                        />
+                        <New
+                            cover={require('../../assets/food/lanche.png')}
+                            name="X-Salada"
+                            description="Lanche do bãooo."
+                            onPress={() => navigation.navigate('Sobre')}
+                        />
+                        <New
+                            cover={require('../../assets/food/lanche.png')}
+                            name="Porcão"
+                            description="Lanche do bãooo."
+                            onPress={() => { }}
+                        />
 
-                </ScrollView>
-            </ScrollView >
+                    </ScrollView>
+                </ScrollView >
+            </View>
+        </View>
 
 
-        </View >
     );
 }

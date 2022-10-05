@@ -7,6 +7,8 @@ export default function SwiperComponent() {
   return (
     <Swiper
       style={styles.wrapper}
+      autoplay={true}
+      autoplayTimeout={4}
       dotStyle={{
         backgroundColor: "#000",
         borderColor: "#000",
