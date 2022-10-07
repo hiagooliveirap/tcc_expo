@@ -35,8 +35,9 @@ const styles = StyleSheet.create({
         marginRight: 14,
     },
     TextPreco: {
-        marginRight: 16,
-        fontSize: 16,
+        marginRight: 30,
+        marginBottom: 2,
+        fontSize: 18,
         fontWeight: "bold",
     },
     TextDescricao: {

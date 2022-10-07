@@ -116,6 +116,16 @@ const styles = StyleSheet.create({
         borderColor: '#FFA500',    
         marginLeft: 10,    
     },
+    itemFiltrosSelecionado: {
+        flexDirection: "row",  
+        alignItems: "center",      
+        width: 90,        
+        borderRadius: 25,
+        padding: 5,
+        height: 40,         
+        marginLeft: 10,
+        backgroundColor: '#FFA500',    
+    },
     itemOrdenar: {
         flexDirection: "row",  
         alignItems: "center",      
@@ -129,6 +139,10 @@ const styles = StyleSheet.create({
     },
     textFiltros: {
         color: '#FFA500',
+        marginLeft: 6,
+    },
+    textFiltrosSelecionado: {
+        color: '#FFF',
         marginLeft: 6,
     },
     containerValor: {

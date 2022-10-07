@@ -28,7 +28,7 @@ export default function Produtos({ navigation }) {
     // produtos
     const [produtos, setProdutos] = useState(
       [
-        {id: 0, nome: 'Lanche de Frango', img: img1, valor: '15,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}, 
+        {id: 0, nome: 'Lanche de Frango', img: img1, valor: '15,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.'}, 
         {id: 1, nome: 'Lanche de Peixe', img: img4, valor: '25,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}, 
         {id: 2, nome: 'Bolo', img: img4, valor: '10,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}, 
         {id: 3, nome: 'Fritas rústica da casa ao lado do vizinho', img: img4, valor: '19,00', avaliacao: 4.3}, 
@@ -57,9 +57,9 @@ export default function Produtos({ navigation }) {
         </View>
 
         <View style={styles.containerFiltros}>
-          <TouchableOpacity style={styles.itemFiltros} onPress={() => navigation.navigate('ItemProduto')}>
-            <Ionicons name='options-outline' size={14} color='#FFA500' style={{marginLeft: 5}} />
-            <Text style={styles.textFiltros}>Filtrar</Text>
+          <TouchableOpacity style={styles.itemFiltrosSelecionado} onPress={() => navigation.navigate('ItemProduto')}>
+            <Ionicons name='options-outline' size={14} color='#FFF' style={{marginLeft: 5}} />
+            <Text style={styles.textFiltrosSelecionado}>Filtrar</Text>
           </TouchableOpacity>                    
 
           <TouchableOpacity style={styles.itemOrdenar}>

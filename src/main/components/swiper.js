@@ -59,14 +59,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    elevation: 2,
+    // elevation: 2,
 
   },
   imagens: {
     width: '90%',
     height: 180,
     borderRadius: 20,
-    elevation: 2,
+    // elevation: 2,
   }
 })
 

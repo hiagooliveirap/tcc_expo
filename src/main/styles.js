@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         padding: 8,
         width: '100%',
-
     },
     containerInputBusca: {
         alignItems: "center",
@@ -50,7 +49,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         height: 250,
         width: '100%',
-
     },
     header: {
         paddingHorizontal: 15,
@@ -77,14 +75,17 @@ const styles = StyleSheet.create({
     },
     contentNew: {
         flexDirection: 'row',
+        justifyContent: 'space-between',        
         width: '100%',
         alignItems: 'center',
+        marginTop: 30,
     },
     title: {
         paddingHorizontal: 15,
+        marginLeft: 3,
         fontSize: 18,
-        color: '#4f4a4a',
-        marginTop: 10,
+        color: '#4f4a4a',        
+        fontWeight: "bold",
     }
 });
 
