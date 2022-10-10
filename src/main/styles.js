@@ -12,15 +12,15 @@ const styles = StyleSheet.create({
     },
     inputBusca: {
         width: '95%',
-        justifyContent: "center",
         marginTop: 10,
-        height: 40,
-        borderRadius: 7,
-        backgroundColor: '#F6F5F4',
-        fontSize: 12,
-        borderWidth: 0,
-        paddingLeft: 10,
-        color: '#C5C5C6',
+        fontSize: 18,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 60,
+        borderRadius: 10,
+        paddingLeft: 12,
+        backgroundColor: '#F8F8F8',
+        elevation: 3,
     },
     containerTextoCategoria: {
         width: '94%',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     contentNew: {
         flexDirection: 'row',
-        justifyContent: 'space-between',        
+        justifyContent: 'space-between',
         width: '100%',
         alignItems: 'center',
         marginTop: 30,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         marginLeft: 3,
         fontSize: 18,
-        color: '#4f4a4a',        
+        color: '#4f4a4a',
         fontWeight: "bold",
     }
 });

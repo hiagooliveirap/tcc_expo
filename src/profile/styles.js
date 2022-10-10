@@ -107,7 +107,8 @@ const styles = StyleSheet.create({
         height: '40%',
         width: '60%',
         backgroundColor: 'orange',
-        borderRadius: 7
+        borderRadius: 7,
+        elevation: 3,
     },
     sairTexto: {
         fontSize: 22,
