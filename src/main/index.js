@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BottomTabView } from '@react-navigation/bottom-tabs';
 import { Text, View, TextInput, TouchableOpacity, ScrollView, Image, SafeAreaView, FlatList } from 'react-native';
 import { useFonts, Poppins_400Regular, Poppins_600SemiBold, Poppins_500Medium } from '@expo-google-fonts/poppins';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import { Feather } from '@expo/vector-icons';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
@@ -56,9 +57,16 @@ export default function Main({ navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView>
-            <View style={styles.containerInputBusca}>
-                <TextInput style={styles.inputBusca} placeholder='O que deseja?' />
-            </View>
+            <Text style={styles.textPrincipal}>Principal</Text>            
+            <View style={styles.containerInput}>
+            <Ionicons name='search-outline' size={20} color='#C5C5C6' />
+            <TextInput 
+                style={styles.inputBusca} 
+                placeholder='O que deseja?'
+                placeholderTextColor='#C5C5C6'
+                underlineColorAndroid='transparent'
+            />
+        </View>
 
             {/* <View style={styles.contentNew}>
                 <Text style={styles.title}>Promoção</Text>
@@ -111,19 +119,26 @@ export default function Main({ navigation }) {
                 </ScrollView >
             </View>
 
+            <View style={styles.containerPopular}>
+                <Text style={styles.title}>Mais populares</Text>
+                <TouchableOpacity>
+                    <Text style={{ color: '#FFA500', marginRight: 20, fontWeight: "bold" }}>Ver mais</Text>
+                </TouchableOpacity>
+            </View>
+
             <SafeAreaView>
-                {/* <FlatList 
+                <FlatList 
                 data={produtos} 
                 renderItem={ ({item}) => <CardItemHorizontal item={item} navigation={navigation} /> } 
                 keyExtractor={ item => item.id} 
                 numColumns={1} 
-                // style={styles.flat}
+                style={styles.flat}
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
                 disableScrollViewPanResponder={true} 
                 scrollEnabled={false}   
                 nestedScrollEnabled={false}        
-                /> */}
+                /> 
             </SafeAreaView>  
             </ScrollView> 
         </View>

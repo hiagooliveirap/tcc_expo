@@ -28,19 +28,19 @@ export default function SwiperComponent() {
     >
       <View style={styles.slide}>
         <Image
-          source={require('../../../assets/food/lanche.png')}
+          source={require('../../../assets/food/banner-1.jpeg')}
           style={styles.imagens}
         />
       </View>
       <View style={styles.slide}>
         <Image
-          source={require('../../../assets/food/xbacon.png')}
+          source={require('../../../assets/food/banner-2.jpeg')}
           style={styles.imagens}
         />
       </View>
       <View style={styles.slide}>
         <Image
-          source={require('../../../assets/food/xbacon.png')}
+          source={require('../../../assets/food/banner-3.jpeg')}
           style={styles.imagens}
         />
       </View>
@@ -57,8 +57,7 @@ const styles = StyleSheet.create({
   slide: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    alignItems: 'center',    
     // elevation: 2,
 
   },

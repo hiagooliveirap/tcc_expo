@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
@@ -7,20 +7,35 @@ const styles = StyleSheet.create({
         padding: 8,
         width: '100%',
     },
-    containerInputBusca: {
-        alignItems: "center",
-    },
-    inputBusca: {
-        width: '95%',
-        justifyContent: "center",
-        marginTop: 10,
-        height: 40,
-        borderRadius: 7,
-        backgroundColor: '#F6F5F4',
-        fontSize: 12,
+    textPrincipal: {
+        fontSize: 30,
+        fontWeight: "bold",
+        margin: 20,
+    },    
+    containerInput: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
         borderWidth: 0,
-        paddingLeft: 10,
-        color: '#C5C5C6',
+        borderColor: '#D2D3D7',
+        height: 60,
+        borderRadius: 15,        
+        marginLeft: 10,        
+        marginRight: 10,        
+        paddingLeft: 12,
+        paddingRight: 12,
+        marginTop: 10,
+        backgroundColor: '#F8F8F8',   
+    },    
+    inputBusca: {
+        flex: 1,
+        marginLeft: 12,
+        height: 37,          
+        backgroundColor: 'transparent',
+        fontSize: 12,
+        borderWidth: 0,        
+        color: '#000',
     },
     containerTextoCategoria: {
         width: '94%',
@@ -77,8 +92,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',        
         width: '100%',
-        alignItems: 'center',
-        marginTop: 30,
+        alignItems: 'center',        
+        marginBottom: 2,
+        marginBottom: -5,
     },
     title: {
         paddingHorizontal: 15,
@@ -86,7 +102,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: '#4f4a4a',        
         fontWeight: "bold",
-    }
+    },
+    containerPopular: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',        
+        width: '100%',
+        alignItems: 'center',        
+        marginTop: 20,        
+    },    
+    flat: {
+        marginTop: 10,
+        marginBottom: Dimensions.get('window').height / 100,
+    },    
 });
 
 export default styles;
