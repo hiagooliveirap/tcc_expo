@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     },
     contentNew: {
         flexDirection: 'row',
-        justifyContent: 'space-between',        
+        justifyContent: 'space-between',
         width: '100%',
         alignItems: 'center',        
         marginBottom: 2,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         marginLeft: 3,
         fontSize: 18,
-        color: '#4f4a4a',        
+        color: '#4f4a4a',
         fontWeight: "bold",
     },
     containerPopular: {
