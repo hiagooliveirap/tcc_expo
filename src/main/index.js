@@ -96,7 +96,7 @@ export default function Main({ navigation }) {
 
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ paddingHorizontal: 15 }} >
 
-                        <New
+                        {/* <New
                             cover={require('../../assets/food/lanche.png')}
                             name="X-Bacon"
                             description="Lanche do bãooo."
@@ -113,8 +113,20 @@ export default function Main({ navigation }) {
                             name="Porcão"
                             description="Lanche do bãooo."
                             onPress={() => { }}
+                        /> */}
+                        <FlatList 
+                            data={produtos} 
+                            renderItem={ ({item}) => <New item={item} navigation={navigation} /> } 
+                            keyExtractor={ item => item.id} 
+                            numColumns={1} 
+                            horizontal={true}
+                            style={styles.flat}
+                            showsVerticalScrollIndicator={false}
+                            showsHorizontalScrollIndicator={false}
+                            disableScrollViewPanResponder={true} 
+                            scrollEnabled={false}   
+                            nestedScrollEnabled={false}        
                         />
-
                     </ScrollView>
                 </ScrollView >
             </View>
