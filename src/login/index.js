@@ -8,6 +8,8 @@ export default function Login({ navigation }) {
     const [opacity] = useState(new Animated.Value(0));
 
     useEffect(() => {
+
+
         Animated.parallel([
             Animated.spring(offset.y, {
                 toValue: 0,
@@ -16,14 +18,15 @@ export default function Login({ navigation }) {
                 useNativeDriver: true,
 
             }),
-            Animated.timing(opacity,{
-                toValue:1,
-                duration:500,
+            Animated.timing(opacity, {
+                toValue: 1,
+                duration: 500,
                 useNativeDriver: true,
-                
+
             })
         ]).start();
     }, []);
+
 
     return (
         <KeyboardAvoidingView style={styles.background}>
@@ -33,7 +36,7 @@ export default function Login({ navigation }) {
 
             <Animated.View style={[
                 styles.container, {
-                    opacity:opacity,
+                    opacity: opacity,
                     transform: [
                         { translateY: offset.y }
                     ]
@@ -43,7 +46,7 @@ export default function Login({ navigation }) {
                     autoCorrect={false}
                     onChangeText={() => { }}
                 />
-                <TextInput style={styles.input}secureTextEntry={true} placeholder='Senha'
+                <TextInput style={styles.input} secureTextEntry={true} placeholder='Senha'
                     autoCorrect={false}
                     onChangeText={() => { }}
                 />

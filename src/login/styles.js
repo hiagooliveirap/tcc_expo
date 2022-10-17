@@ -8,15 +8,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffff',
     },
     containerLogo: {
-        flex: 0.5,
         justifyContent: 'center',
+        marginTop: '40%',
     },
     container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         width: '90%',
-        paddingBottom: 80,
+        paddingBottom: 30,
 
     },
     input: {
