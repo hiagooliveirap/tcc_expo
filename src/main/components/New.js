@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
+import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 
-export default function New(props) {
+export default function New({item, navigation}) {
   return (
-    <TouchableOpacity onPress={() => { props.onPress }} style={styles.container}>
+    <TouchableOpacity onPress={() => navigation.navigate('ItemProduto', {item})} style={styles.container}>
       <Image
-        source={props.cover}
+        source={item.img}
         style={styles.cover}
       />
 
       <View style={styles.content}>
-        <Text style={styles.title}>{props.name}</Text>
+        <Text style={styles.title} numberOfLines={1} ellipsizeMode='tail'>{item.nome}</Text>
 
         <View style={styles.dot}></View>
         <View>
@@ -21,12 +22,12 @@ export default function New(props) {
       </View>
 
       <Text style={styles.description}>
-        {props.description}
+        {item.description}
       </Text>
 
       <View style={styles.footer}>
         <View style={{ width: '80%' }}>
-          <Text style={styles.price}>R$ 19,90</Text>
+          <Text style={styles.price}>{item.valor}</Text>
         </View>
         <View style={{ width: '20%' }}>
           <Ionicons name='ios-add-circle' size={24} color='black' />
@@ -55,26 +56,23 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   content: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column',
     marginVertical: 10,
   },
   title: {
     fontFamily: 'Poppins_600SemiBold',
     fontSize: 12,
-    color: '#4f4a4as',
-  },
-  dot: {
-    width: 4,
-    height: 4,
-    borderRadius: 4,
-    backgroundColor: 'red',
-    marginHorizontal: 4,
+    color: '#4f4a4as',    
   },
   badge: {
-    color: 'red',
+    color: '#1BAC4B',
     fontSize: 9,
     fontFamily: 'Poppins_600SemiBold',
+    width: 40,
+    paddingTop: 3,
+    textAlign: 'center',
+    borderRadius: 5,
+    backgroundColor: '#E8F7ED',
   },
   description: {
     fontFamily: 'Poppins_400Regular',

@@ -4,8 +4,6 @@ import { StyleSheet, Dimensions } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
         backgroundColor: '#FEFFFE',        
         padding: 8,
         width: '100%',
@@ -20,15 +18,16 @@ const styles = StyleSheet.create({
         paddingLeft: 12,
         paddingRight: 12,
         flexDirection: 'row',
-        marginTop: 10,
+        marginTop: 30,
         fontSize: 18,
+        marginLeft: 12,
         justifyContent: 'center',
         alignItems: 'center',
         height: 60,
         borderRadius: 10,
         paddingLeft: 12,
         backgroundColor: '#F8F8F8',
-        elevation: 3,
+        // elevation: 3,
     },
     inputBusca: {
         flex: 1,
@@ -183,6 +182,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         fontSize: 18,
         fontWeight: "bold",
+        maxWidth: 210,
     },
     txtValorHorizontal: {
         color: '#FFA500',

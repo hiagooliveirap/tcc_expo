@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     textPrincipal: {
         fontSize: 30,
         fontWeight: "bold",
-        margin: 20,
+        marginLeft: 20,
+        marginTop: 30,
     },    
     containerInput: {
         flexDirection: 'row',

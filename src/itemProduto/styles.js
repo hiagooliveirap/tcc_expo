@@ -25,19 +25,21 @@ const styles = StyleSheet.create({
     },
     containerTituloPreco: {
         flexDirection: "row",
-        justifyContent: 'space-between',
-        alignItems: "flex-end",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: '90%',  
+        marginLeft: 5,
     },
     TextTitulo: {
         fontSize: 24,
         fontWeight: "bold",
-        marginLeft: 16,
+        marginLeft: 10,
         marginRight: 14,
+        maxWidth: 290,
     },
     TextPreco: {
-        marginRight: 30,
-        marginBottom: 2,
-        fontSize: 18,
+        justifyContent: 'flex-end',
+        fontSize: 20,
         fontWeight: "bold",
     },
     TextDescricao: {
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         marginRight: 14,
         marginTop: 12,
+        height: 260,
         color: '#808080',
     },
     containerFooter: {
