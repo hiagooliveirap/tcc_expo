@@ -21,10 +21,6 @@ export default function New({ item, navigation }) {
         </View>
       </View>
 
-      <Text style={styles.description}>
-        {item.description}
-      </Text>
-
       <View style={styles.footer}>
         <View style={{ width: '80%' }}>
           <Text style={styles.price}>R$ {item.valor}</Text>
@@ -38,7 +34,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 20,
     backgroundColor: '#fff',
-    height: 250,
+    height: 255,
     width: 200,
     elevation: 2,
     borderRadius: 10,
@@ -71,11 +67,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: '#E8F7ED',
   },
-  description: {
-    fontFamily: 'Poppins_400Regular',
-    fontSize: 9,
-    color: '#4f4a4a',
-  },
   footer: {
     flexDirection: 'row',
     marginTop: 5,
@@ -83,7 +74,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   price: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: 'bold',
   },
 });

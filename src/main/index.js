@@ -56,7 +56,7 @@ export default function Main({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={styles.textPrincipal}>Principal</Text>
                 <View style={styles.containerInput}>
                     <Ionicons name='search-outline' size={20} color='#C5C5C6' />
