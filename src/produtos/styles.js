@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         height: 37,
         backgroundColor: 'transparent',
         fontSize: 16,
-        borderWidth: 0,        
+        borderWidth: 0,
         color: '#000',
     },
     elevation: {

@@ -4,9 +4,9 @@ import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 
-export default function New({item, navigation}) {
+export default function New({ item, navigation }) {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('ItemProduto', {item})} style={styles.container}>
+    <TouchableOpacity onPress={() => navigation.navigate('ItemProduto', { item })} style={styles.container}>
       <Image
         source={item.img}
         style={styles.cover}
@@ -27,10 +27,7 @@ export default function New({item, navigation}) {
 
       <View style={styles.footer}>
         <View style={{ width: '80%' }}>
-          <Text style={styles.price}>{item.valor}</Text>
-        </View>
-        <View style={{ width: '20%' }}>
-          <Ionicons name='ios-add-circle' size={24} color='black' />
+          <Text style={styles.price}>R$ {item.valor}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -61,14 +58,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Poppins_600SemiBold',
-    fontSize: 12,
-    color: '#4f4a4as',    
+    fontSize: 17,
+    color: '#4f4a4as',
   },
   badge: {
     color: '#1BAC4B',
-    fontSize: 9,
+    fontSize: 12,
     fontFamily: 'Poppins_600SemiBold',
-    width: 40,
+    width: 50,
     paddingTop: 3,
     textAlign: 'center',
     borderRadius: 5,
@@ -84,5 +81,9 @@ const styles = StyleSheet.create({
     marginTop: 5,
     alignItems: 'center',
     width: '100%',
+  },
+  price: {
+    fontSize: 22,
+    fontWeight: 'bold',
   },
 });
