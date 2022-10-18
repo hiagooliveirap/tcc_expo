@@ -11,106 +11,108 @@ const styles = StyleSheet.create({
     },
     caixa: {
         flex: 1,
-        backgroundColor: '#e6e6e6',
+        backgroundColor: '#f8f8f8',
         margin: 13,
         borderRadius: 20,
         width: '96%',
-        flexDirection:'column'
+        flexDirection: 'column',
+        elevation: 2,
     },
-    header:{
-        marginTop:10,
-        marginLeft:10,
-        height:'15%',
-        justifyContent:'flex-start',
-        flexDirection:'row',
+    header: {
+        marginTop: 10,
+        marginLeft: 10,
+        height: '15%',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
         borderBottomColor: 'black',
-        borderStyle:'solid',
-        borderBottomEndRadius:2
-        
+        borderStyle: 'solid',
+        borderBottomEndRadius: 2
+
     },
-    borda:{
-        marginTop:18,
-        marginLeft:'2%',
-        width:'95%',
-        height:2,
-        backgroundColor:'black',
-        alignItems:'center',
-        justifyContent:'center'
+    borda: {
+        marginTop: 18,
+        marginLeft: '2%',
+        width: '95%',
+        height: 2,
+        backgroundColor: 'black',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
-    foto:{
-        marginBottom:'3%',
-        backgroundColor:'red',
-        height:90,
+    foto: {
+        marginBottom: '3%',
+        backgroundColor: 'red',
+        height: 90,
         width: 90,
-        borderRadius:100,
+        borderRadius: 100,
     },
-    info:{
+    info: {
         //backgroundColor:'#D6D6D6',
-        height:'100%',
-        width:'73%'
+        height: '100%',
+        width: '73%'
     },
-    nome:{
-        fontSize:22,
-        fontWeight:'bold',
-        alignContent:'center',
-        justifyContent:'center',
-        marginTop:15,
-        marginLeft:7    
+    nome: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        alignContent: 'center',
+        justifyContent: 'center',
+        marginTop: 15,
+        marginLeft: 7
     },
-    local:{
-        fontSize:15,
-        alignContent:'center',
-        justifyContent:'center',
-        marginTop:15,
-        marginLeft:7  
+    local: {
+        fontSize: 15,
+        alignContent: 'center',
+        justifyContent: 'center',
+        marginTop: 15,
+        marginLeft: 7
     },
-    body:{
-        flex:1,
-        position:'relative',
+    body: {
+        flex: 1,
+        position: 'relative',
         //backgroundColor:'blue',
         // width:'100%',
         // height:'70%',
     },
-    menu:{
-        
-    },
-    icon:{
-        display:'flex',
-        flexDirection:'row', 
-        alignItems:'center',
-        marginLeft:20,
-        padding:25,
-        marginTop:20,
+    menu: {
 
     },
-    textoMenu:{
-        alignSelf:'flex-start',
-        marginLeft:30,
-        fontSize:24,
+    icon: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginLeft: 20,
+        padding: 25,
+        marginTop: 20,
+
+    },
+    textoMenu: {
+        alignSelf: 'flex-start',
+        marginLeft: 30,
+        fontSize: 24,
         //fontWeight:'bold'
     },
-    footer:{
+    footer: {
         //flex:1,
-        height:'20%',
+        height: '20%',
         //backgroundColor:'orange',
-        position:'relative',
-        alignContent:'center',
+        position: 'relative',
+        alignContent: 'center',
         //alignItems:'center',
-        justifyContent:'center',
+        justifyContent: 'center',
     },
-    sair:{
-        marginLeft:'20%',
-        alignContent:'center',
-        justifyContent:'center',
-        alignItems:'center',
-        height:'40%',
-        width:'60%',
-        backgroundColor:'orange',
-        borderRadius:7
+    sair: {
+        marginLeft: '20%',
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '40%',
+        width: '60%',
+        backgroundColor: 'orange',
+        borderRadius: 7,
+        elevation: 3,
     },
-    sairTexto:{
-        fontSize:22,
-        fontWeight:'bold',
+    sairTexto: {
+        fontSize: 22,
+        fontWeight: 'bold',
     },
     text: {
         fontSize: 16,

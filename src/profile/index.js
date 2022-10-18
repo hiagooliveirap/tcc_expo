@@ -22,23 +22,19 @@ export default function Perfil({navigation}) {
                             <Text style={styles.textoMenu}>Favoritos</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.icon}>
+                        {/* <TouchableOpacity style={styles.icon}>
                         <Image style={{width:25 , height:25}} source={require('../../assets/icon/info.png')} />
                             <Text style={styles.textoMenu}>Minhas informações</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
 
-                        <TouchableOpacity style={styles.icon}>
+                        {/* <TouchableOpacity style={styles.icon}>
                         <Image style={{width:25 , height:25}} source={require('../../assets/icon/config.png')} />
                             <Text style={styles.textoMenu}>Configurações</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                     </View>
                 </View>
 
-                <View style={styles.footer}>
-                    <TouchableOpacity style={styles.sair}>
-                        <View><Text style={styles.sairTexto}>Sair</Text></View>
-                    </TouchableOpacity>
-                </View>
+
                 
             </View>
         </View>

@@ -7,48 +7,46 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#ffff',
     },
-    containerLogo:{
-        flex:0.5,
-        justifyContent:'center',
+    containerLogo: {
+        justifyContent: 'center',
+        marginTop: '40%',
     },
-    container:{
-        fontFamily:'Poppins_400Regular',
-        flex:1,
-        alignItems:'center',
-        justifyContent:'center',
-        width:'90%',
-        paddingBottom:80,
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '90%',
+        paddingBottom: 30,
 
     },
-   input:{
-    fontFamily:'Poppins_400Regular',
-    backgroundColor:'#EAEAEA',
-    width:'90%',
-    marginBottom:30,
-    color:'#222',
-    fontSize:17,
-    borderRadius:7,
-    padding:10,
-   },
-   btnSubmit:{
-    width:'90%',
-    height:45,
-    backgroundColor:'#F0B212',
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:7,
-   },
-   txtSubmit:{
-    fontSize:18,
-    fontWeight:'bold',
-   },
-   btnRegister:{
-    marginTop:10,
-   },
-   txtRegister:{
-    fontWeight:'bold',
-    marginBottom:10,
-   },
+    input: {
+        backgroundColor: '#EAEAEA',
+        width: '90%',
+        marginBottom: 30,
+        color: '#222',
+        fontSize: 17,
+        borderRadius: 7,
+        padding: 10,
+    },
+    btnSubmit: {
+        width: '90%',
+        height: 45,
+        backgroundColor: '#F0B212',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 7,
+    },
+    txtSubmit: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    btnRegister: {
+        marginTop: 10,
+    },
+    txtRegister: {
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
 
 });
 

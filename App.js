@@ -7,8 +7,9 @@ import Rotas from './src/rotas/rotas';
 // import Teste from './src/cadCliente';
 
 export default function App() {
+
   return (
-      <Rotas />  
+    <Rotas />
   );
 }
 
