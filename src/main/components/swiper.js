@@ -63,9 +63,8 @@ const styles = StyleSheet.create({
   },
   imagens: {
     width: '90%',
-    height: 180,
-    borderRadius: 20,
-    // elevation: 2,
+    height: 150,
+    borderRadius:20
   }
 })
 
