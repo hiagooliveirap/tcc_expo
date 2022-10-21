@@ -46,7 +46,7 @@ export default function Perfil({navigation}) {
                     <Image source={require('../../assets/arrow-back-simple.png')} />
                 </TouchableOpacity>            
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('EditaPerfil')}>
                     <Image source={require('../../assets/botao-editar.png')} />
                 </TouchableOpacity>            
            </View>     

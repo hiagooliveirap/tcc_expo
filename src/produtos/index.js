@@ -57,7 +57,7 @@ export default function Produtos({ navigation }) {
         </View>
 
         <View style={styles.containerFiltros}>
-          <TouchableOpacity style={styles.itemFiltrosSelecionado} onPress={() => navigation.navigate('ItemProduto')}>
+          <TouchableOpacity style={styles.itemFiltrosSelecionado}>
             <Ionicons name='options-outline' size={14} color='#FFF' style={{marginLeft: 5}} />
             <Text style={styles.textFiltrosSelecionado}>Filtrar</Text>
           </TouchableOpacity>                    
