@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Text, View, TextInput, TouchableOpacity, SafeAreaView, FlatList } from 'react-native'; 
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CardItem from './card_item';
 import CardItemHorizontal from './card_item_horizontal';
+import api from '../services/api';
 
 import img1 from '../../assets/product-7.jpg';
 import img3 from '../../assets/product-1.png';
@@ -26,24 +27,31 @@ export default function Produtos({ navigation }) {
     ); 
   
     // produtos
-    const [produtos, setProdutos] = useState(
-      [
-        {id: 0, nome: 'Lanche de Frango', img: img1, valor: '15,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.'}, 
-        {id: 1, nome: 'Lanche de Peixe', img: img4, valor: '25,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}, 
-        {id: 2, nome: 'Bolo', img: img4, valor: '10,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'}, 
-        {id: 3, nome: 'Fritas rústica da casa ao lado do vizinho', img: img4, valor: '19,00', avaliacao: 4.3}, 
-        {id: 4, nome: 'Suco de laranja', img: img5, valor: '8,25', avaliacao: 4.3}, 
-        {id: 5, nome: 'Suco verde', img: img6, valor: '12,00', avaliacao: 4.3}, 
-        {id: 6, nome: 'Suco', img: img5, valor: '13,00', avaliacao: 4.3}, 
-        {id: 7, nome: 'Suco', img: img6, valor: '14,00', avaliacao: 4.3}, 
-        {id: 8, nome: 'Suco', img: img6, valor: '15,00', avaliacao: 4.3}, 
-        {id: 9, nome: 'Suco', img: img6, valor: '16,00', avaliacao: 4.3}, 
-        {id: 10, nome: 'Suco', img: img6, valor: '17,00', avaliacao: 4.3}, 
-        {id: 11, nome: 'Suco', img: img6, valor: '18,00', avaliacao: 4.3}, 
-        {id: 12, nome: 'Suco', img: img6, valor: '19,00', avaliacao: 4.3}, 
-      ]
-    );
-    const numColumns = 2;
+    const [produtos, setProdutos] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [page, setPage] = useState(1);
+    const limit = 10;
+    const [loading, setLoading] = useState(false);
+    
+    
+    async function listaProduto(){
+      try{
+        const response = await api.get('produtos', {
+          params: {page, limit}
+        });
+        setProdutos(response.data.message);
+      } catch (e) {
+        setProdutos([]);
+        console.log('erro' + e)
+      }
+    }
+
+    useEffect(() => {
+      listaProduto();
+    }, [])
+
+
+    //const numColumns = 2;
     return (       
       <View style={styles.container}>        
         <View style={styles.containerInput}>
@@ -72,8 +80,8 @@ export default function Produtos({ navigation }) {
           <FlatList 
             data={produtos} 
             renderItem={ ({item}) => <CardItemHorizontal item={item} navigation={navigation} /> } 
-            keyExtractor={ item => item.id} 
-            numColumns={numColumns} 
+            keyExtractor={ item => item.proId} 
+            //numColumns={numColumns} 
             style={styles.flat}
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
