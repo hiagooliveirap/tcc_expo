@@ -9,7 +9,7 @@ export default function ItemProduto({ route, navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.containerHeader}>
-                <ImageBackground source={route.params.item.img} style={styles.imgPrincipal}>
+                <ImageBackground source={{uri: route.params.item.proImagem}} style={styles.imgPrincipal}>
                     <View style={styles.containerHeaderBotoes}>
                         <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
                             <Image source={iconeVoltar} style={{ width: 34, height: 34 }} />
@@ -26,15 +26,15 @@ export default function ItemProduto({ route, navigation }) {
                 <View style={styles.containerBody}>
                     <Text style={styles.TextCategoria}>Lanches</Text>
                     <View style={styles.containerTituloPreco}>
-                        <Text style={styles.TextTitulo}>{route.params.item.nome}</Text>
-                        <Text style={styles.TextPreco}>R$ {route.params.item.valor}</Text>
+                        <Text style={styles.TextTitulo}>{route.params.item.proNome}</Text>
+                        <Text style={styles.TextPreco}>R$ {route.params.item.tamPreco}</Text>
                     </View>
                     {/* <View style={styles.avaliacao}>                    
                     <Text style={styles.textAvaliacao}>4.3</Text>
                     <Ionicons name='star' size={16} color='#FEC432' />                    
                 </View>        */}
 
-                    <Text style={styles.TextDescricao}>{route.params.item.descricao}</Text>
+                    <Text style={styles.TextDescricao}>{route.params.item.proDescricao}</Text>
                 </View>
             </ScrollView>
 

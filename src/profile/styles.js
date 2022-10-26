@@ -1,121 +1,58 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: 'white',
         padding: 8,
         width: '100%',
     },
-    caixa: {
-        flex: 1,
-        backgroundColor: '#f8f8f8',
-        margin: 13,
-        borderRadius: 20,
-        width: '96%',
-        flexDirection: 'column',
-        elevation: 2,
-    },
     header: {
-        marginTop: 10,
-        marginLeft: 10,
-        height: '15%',
-        justifyContent: 'flex-start',
-        flexDirection: 'row',
-        borderBottomColor: 'black',
-        borderStyle: 'solid',
-        borderBottomEndRadius: 2
-
-    },
-    borda: {
-        marginTop: 18,
-        marginLeft: '2%',
-        width: '95%',
-        height: 2,
-        backgroundColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center'
+        width: '91%',
+        marginLeft: 16,
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        marginTop: 30,
     },
     foto: {
         marginBottom: '3%',
-        backgroundColor: 'red',
-        height: 90,
-        width: 90,
+        backgroundColor: '#000',
+        height: 120,
+        width: 120,
         borderRadius: 100,
+        alignSelf: "center",
+        marginTop: '5%',
     },
     info: {
-        //backgroundColor:'#D6D6D6',
-        height: '100%',
-        width: '73%'
+        alignItems: "center",
+        marginTop: '2%',
     },
-    nome: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        alignContent: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-        marginLeft: 7
+    nome_usuario: {
+        fontSize: 18,
+        fontWeight: "bold",
     },
-    local: {
-        fontSize: 15,
-        alignContent: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-        marginLeft: 7
+    email_usuario: {
+        color: '#808080',
     },
-    body: {
-        flex: 1,
-        position: 'relative',
-        //backgroundColor:'blue',
-        // width:'100%',
-        // height:'70%',
+    container_favorito: {
+        marginTop: '12%',
+        marginLeft: 16,
+        marginRight: 20,
+        flexDirection: "row",
+        justifyContent: 'space-between',
     },
-    menu: {
-
+    titulo_favorito: {
+        fontSize: 18,
+        fontWeight: "bold",
+        color: '#4f4a4a',
     },
-    icon: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginLeft: 20,
-        padding: 25,
-        marginTop: 20,
-
+    contador_favorito: {
+        color: '#FFA500',
+        fontWeight: "bold",
     },
-    textoMenu: {
-        alignSelf: 'flex-start',
-        marginLeft: 30,
-        fontSize: 24,
-        //fontWeight:'bold'
-    },
-    footer: {
-        //flex:1,
-        height: '20%',
-        //backgroundColor:'orange',
-        position: 'relative',
-        alignContent: 'center',
-        //alignItems:'center',
-        justifyContent: 'center',
-    },
-    sair: {
-        marginLeft: '20%',
-        alignContent: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '40%',
-        width: '60%',
-        backgroundColor: 'orange',
-        borderRadius: 7,
-        elevation: 3,
-    },
-    sairTexto: {
-        fontSize: 22,
-        fontWeight: 'bold',
-    },
-    text: {
-        fontSize: 16,
+    flat: {
+        marginTop: 10,
+        marginBottom: Dimensions.get('window').height / 100,
     },
 });
 
