@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         paddingRight: 12,
         marginTop: 10,
         backgroundColor: '#F8F8F8',
+        elevation: 2,
     },
     inputBusca: {
         flex: 1,
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         borderWidth: 0,
         color: '#000',
+
     },
     containerTextoCategoria: {
         width: '94%',

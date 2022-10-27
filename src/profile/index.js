@@ -4,7 +4,7 @@ import styles from './styles';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
 import img1 from '../../assets/product-7.jpg';
 
-export default function Perfil({navigation}) {
+export default function Perfil({ navigation }) {
     const [tipoSel, setTipoSel] = useState([]);
 
     //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
@@ -36,45 +36,49 @@ export default function Perfil({navigation}) {
         ]
     );
 
-    return(
-        <ScrollView            
+    return (
+        <ScrollView
             style={styles.container}
             showsVerticalScrollIndicator={false}>
 
-           <View style={styles.header}>
+            <View style={styles.header}>
                 <TouchableOpacity>
                     <Image source={require('../../assets/arrow-back-simple.png')} />
-                </TouchableOpacity>            
+                </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => navigation.navigate('EditaPerfil')}>
                     <Image source={require('../../assets/botao-editar.png')} />
-                </TouchableOpacity>            
-           </View>     
-            
-            <Image source={require('../../assets/profile.jpg')} style={styles.foto}/>         
+                </TouchableOpacity>
+            </View>
+
+            <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
 
             <View style={styles.info}>
                 <Text style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
                 <Text style={styles.email_usuario}>simas@gmail.com</Text>
-            </View>   
-
-            <View style={styles.container_favorito}>
-                <Text style={styles.titulo_favorito}>Meus favoritos</Text>
-                <Text style={styles.contador_favorito}>22</Text>
             </View>
 
-            <FlatList                
-                data={produtos}
-                renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} />}
-                keyExtractor={item => item.id}
-                numColumns={1}
-                style={styles.flat}
-                showsVerticalScrollIndicator={false}
-                showsHorizontalScrollIndicator={false}
-                disableScrollViewPanResponder={true}    
-                scrollEnabled={false}                    
-                nestedScrollEnabled={false}
-            />
+            <View style={styles.background}>
+
+
+                <View style={styles.container_favorito}>
+                    <Text style={styles.titulo_favorito}>Meus favoritos</Text>
+                    <Text style={styles.contador_favorito}>22</Text>
+                </View>
+
+                <FlatList
+                    data={produtos}
+                    renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} />}
+                    keyExtractor={item => item.id}
+                    numColumns={1}
+                    style={styles.flat}
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
+                    disableScrollViewPanResponder={true}
+                    scrollEnabled={false}
+                    nestedScrollEnabled={false}
+                />
+            </View>
         </ScrollView>
     );
 }

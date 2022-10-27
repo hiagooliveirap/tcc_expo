@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
   slide: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',    
+    alignItems: 'center',
     // elevation: 2,
 
   },
   imagens: {
     width: '90%',
-    height: 150,
-    borderRadius:20
+    height: 180,
+    borderRadius: 20
   }
 })
 

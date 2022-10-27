@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        padding: 8,
+        //padding: 8,
         width: '100%',
     },
     header: {
@@ -40,6 +40,14 @@ const styles = StyleSheet.create({
         marginRight: 20,
         flexDirection: "row",
         justifyContent: 'space-between',
+    },
+    background: {
+        marginTop: 20,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+        borderWidth: 1,
+        borderColor: '#808080',
+        borderBottomWidth: 0,
     },
     titulo_favorito: {
         fontSize: 18,
