@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         width: 120,
         borderRadius: 100,
         alignSelf: "center",
-        marginTop: '5%',
+        marginTop: '12%',
     },
     info: {
         alignItems: "center",
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
-        borderWidth: 1,
+        borderWidth: 0.1,
+        // backgroundColor: '#000',
         borderColor: '#808080',
         borderBottomWidth: 0,
     },

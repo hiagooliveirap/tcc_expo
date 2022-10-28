@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 10,
         backgroundColor: '#F8F8F8',
-        elevation: 2,
     },
     inputBusca: {
         flex: 1,

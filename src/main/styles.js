@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginLeft: 20,
         marginTop: 30,
+        marginBottom: 12,
     },
     containerInput: {
         flexDirection: 'row',
@@ -28,14 +29,13 @@ const styles = StyleSheet.create({
         paddingRight: 12,
         marginTop: 10,
         backgroundColor: '#F8F8F8',
-        elevation: 2,
     },
     inputBusca: {
         flex: 1,
         marginLeft: 12,
         height: 37,
         backgroundColor: 'transparent',
-        fontSize: 18,
+        fontSize: 16,
         borderWidth: 0,
         color: '#000',
 
