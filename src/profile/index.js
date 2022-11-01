@@ -42,13 +42,11 @@ export default function Perfil({ navigation }) {
             showsVerticalScrollIndicator={false}>
 
             <View style={styles.header}>
-                <TouchableOpacity>
-                    <Image source={require('../../assets/arrow-back-black.png')} />
-                </TouchableOpacity>
+
 
                 <Text style={{ fontSize: 17, fontWeight: 'bold' }}>Perfil</Text>
 
-                <TouchableOpacity onPress={() => navigation.navigate('EditaPerfil')}>
+                <TouchableOpacity onPress={() => navigation.navigate('EditPerfil')}>
                     <Image source={require('../../assets/edit-button-black.png')} />
                 </TouchableOpacity>
             </View>

@@ -14,7 +14,7 @@ import CadastroEnderecoCliente from '../enderecoCliente';
 import Perfil from '../profile';
 import Favoritos from '../favoritos';
 import ItemProduto from '../itemProduto';
-import EditaPerfil from '../editaPerfil';
+import EditPerfil from '../profile/edit';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,9 +22,10 @@ export default function Rotas() {
     return (
         <NavigationContainer>
             <Stack.Navigator
+            style="dark"
                 screenOptions={{
                     headerShown: false,
-                    statusBarColor: '#FFA500',
+                    statusBarColor: '#FFF',                    
                 }}
             >
                 <Stack.Screen name="Login" component={Login} />
@@ -34,9 +35,9 @@ export default function Rotas() {
                 <Stack.Screen name="Perfil" component={Perfil} />
                 <Stack.Screen name="Favoritos" component={Favoritos} />
                 <Stack.Screen name="ItemProduto" component={ItemProduto} />
-                <Stack.Screen name="EditaPerfil" component={EditaPerfil} />
+                <Stack.Screen name="EditPerfil" component={EditPerfil} />
             </Stack.Navigator>
-            <StatusBar style='light' />
+            <StatusBar style='dark' />
         </NavigationContainer>
     );
 
