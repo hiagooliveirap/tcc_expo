@@ -4,15 +4,38 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFF',
-        padding: 8,
+        //padding: 8,
         width: '100%',
     },
     textPrincipal: {
-        fontSize: 30,
+        fontSize: 16,
         fontWeight: "bold",
         marginLeft: 20,
-        marginTop: 30,
+        marginTop: 15,
+        color: '#000',
+    },
+    nome_usuario: {
+        marginLeft: 20,
+        fontSize: 22,
+        fontWeight: "bold",
+        color: '#fff',
         marginBottom: 12,
+        maxWidth: 280,
+    },
+    foto: {
+        marginBottom: 12,
+        backgroundColor: '#000',
+        height: 40,
+        width: 40,
+        borderRadius: 100,
+    },
+    containerFoto: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginRight: 20,
+
     },
     containerInput: {
         flexDirection: 'row',
@@ -28,7 +51,11 @@ const styles = StyleSheet.create({
         paddingLeft: 12,
         paddingRight: 12,
         marginTop: 10,
-        backgroundColor: '#F8F8F8',
+        //backgroundColor: '#F8F8F8',
+    },
+    background: {
+        backgroundColor: '#FFA500',
+        height: 170,
     },
     inputBusca: {
         flex: 1,

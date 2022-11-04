@@ -22,10 +22,10 @@ export default function Rotas() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-            style="dark"
+                style="dark"
                 screenOptions={{
                     headerShown: false,
-                    statusBarColor: '#FFF',                    
+                    statusBarColor: '#FFA500',
                 }}
             >
                 <Stack.Screen name="Login" component={Login} />

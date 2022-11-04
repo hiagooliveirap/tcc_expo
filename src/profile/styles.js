@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'space-between',
         marginTop: 30,
+
     },
     foto: {
         marginBottom: '3%',
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
         width: 120,
         borderRadius: 100,
         alignSelf: "center",
-        marginTop: '12%',
+        marginTop: '6%',
     },
     info: {
         alignItems: "center",
@@ -32,28 +33,24 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     email_usuario: {
-        color: '#808080',
+        color: '#fff',
     },
     container_favorito: {
-        marginTop: '12%',
+        marginTop: '6%',
         marginLeft: 16,
         marginRight: 20,
         flexDirection: "row",
         justifyContent: 'space-between',
     },
-    background: {
-        marginTop: 20,
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-        borderWidth: 0.1,
-        // backgroundColor: '#000',
-        borderColor: '#808080',
-        borderBottomWidth: 0,
+
+    background02: {
+        backgroundColor: '#FFA500',
+        height: 300,
     },
     titulo_favorito: {
         fontSize: 18,
         fontWeight: "bold",
-        color: '#4f4a4a',
+        color: '#000',
     },
     contador_favorito: {
         color: '#FFA500',
