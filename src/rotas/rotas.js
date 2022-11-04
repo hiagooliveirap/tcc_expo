@@ -25,7 +25,7 @@ export default function Rotas() {
                 style="dark"
                 screenOptions={{
                     headerShown: false,
-                    statusBarColor: '#FFA500',
+                    statusBarColor: '#ffa500',
                 }}
             >
                 <Stack.Screen name="Login" component={Login} />

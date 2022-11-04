@@ -83,6 +83,10 @@ export default function Main({ navigation }) {
                         <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
                         <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
                     </View>
+=======
+                <View style={styles.background}>
+                    <Text style={styles.textPrincipal}>Principal</Text>
+>>>>>>> Stashed changes
                     <View style={styles.containerInput}>
                         <Ionicons name='search-outline' size={20} color='#C5C5C6' />
                         <TextInput

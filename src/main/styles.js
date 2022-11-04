@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
         //padding: 8,
         width: '100%',
     },
+    background: {
+        backgroundColor: '#ffa500',
+        height: 170,
+    },
     textPrincipal: {
         fontSize: 16,
         fontWeight: "bold",
@@ -42,6 +46,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
+        //backgroundColor: '#FFA500',
         borderWidth: 0,
         borderColor: '#D2D3D7',
         height: 60,
