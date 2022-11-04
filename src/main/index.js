@@ -76,6 +76,7 @@ export default function Main({ navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
+<<<<<<< Updated upstream
 
                 <View style={styles.background}>
                     <Text style={styles.textPrincipal}>Bem Vindo!</Text>
