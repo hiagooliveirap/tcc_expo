@@ -5,8 +5,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FEFFFE',
-        padding: 8,
+        //padding: 8,
         width: '100%',
+    },
+    background: {
+        backgroundColor: '#FFA500',
+        height: 140,
     },
     flat: {
         marginTop: 20,
@@ -96,6 +100,7 @@ const styles = StyleSheet.create({
     },
     containerFiltros: {
         width: '100%',
+        marginTop: 10,
         height: 48,
         justifyContent: "flex-start",
         flexDirection: "row",

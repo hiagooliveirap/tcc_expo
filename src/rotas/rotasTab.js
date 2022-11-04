@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Main from '../main';
 import Produtos from '../produtos';
 import Perfil from '../profile';
+import styles from '../cadCliente/styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,10 +14,11 @@ export default function RotasTab() {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: '#FFA500',
+                tabBarActiveTintColor: '#ffa500',
                 tabBarInactiveTintColor: 'gray',
                 headerShown: false,
                 tabBarHideOnKeyboard: true,
+                tabBarShowLabel: false,
             }}>
 
             <Tab.Screen
@@ -28,7 +30,7 @@ export default function RotasTab() {
                     tabBarLabelStyle: { marginBottom: 10 },
                     tabBarIcon: ({ focused }) => {
                         let color = focused ? '#FFA500' : 'gray';
-                        return <Ionicons name='home-outline' size={23} color={color} />;
+                        return <Ionicons name='home-outline' size={30} color={color} />;
                     },
                 }}
             />
@@ -40,8 +42,8 @@ export default function RotasTab() {
                     tabBarIconStyle: { marginTop: 8 },
                     tabBarLabelStyle: { marginBottom: 10 },
                     tabBarIcon: ({ focused }) => {
-                        let color = focused ? '#FFA500' : 'gray';
-                        return <Ionicons name='search-outline' size={23} color={color} />;
+                        let color = focused ? '#FFa500' : 'gray';
+                        return <Ionicons name='search-outline' size={30} color={color} />;
                     },
                 }}
             />
@@ -53,8 +55,8 @@ export default function RotasTab() {
                     tabBarIconStyle: { marginTop: 8 },
                     tabBarLabelStyle: { marginBottom: 10 },
                     tabBarIcon: ({ focused }) => {
-                        let color = focused ? '#FFA500' : 'gray';
-                        return <Ionicons name='person-outline' size={23} color={color} />;
+                        let color = focused ? '#FFa500' : 'gray';
+                        return <Ionicons name='person-outline' size={30} color={color} />;
                     },
                 }}
             />

@@ -68,7 +68,7 @@ export default function Main({ navigation }) {
     //       console.log('erro' + e)
     //     }
     //   }
-  
+
     //   useEffect(() => {
     //     listaProduto();
     //   }, [])
@@ -76,15 +76,27 @@ export default function Main({ navigation }) {
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Text style={styles.textPrincipal}>Principal</Text>
-                <View style={styles.containerInput}>
-                    <Ionicons name='search-outline' size={20} color='#C5C5C6' />
-                    <TextInput
-                        style={styles.inputBusca}
-                        placeholder='O que deseja?'
-                        placeholderTextColor='#C5C5C6'
-                        underlineColorAndroid='transparent'
-                    />
+<<<<<<< Updated upstream
+
+                <View style={styles.background}>
+                    <Text style={styles.textPrincipal}>Bem Vindo!</Text>
+                    <View style={styles.containerFoto}>
+                        <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
+                        <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
+                    </View>
+=======
+                <View style={styles.background}>
+                    <Text style={styles.textPrincipal}>Principal</Text>
+>>>>>>> Stashed changes
+                    <View style={styles.containerInput}>
+                        <Ionicons name='search-outline' size={20} color='#C5C5C6' />
+                        <TextInput
+                            style={styles.inputBusca}
+                            placeholder='O que deseja?'
+                            placeholderTextColor='#C5C5C6'
+                            underlineColorAndroid='transparent'
+                        />
+                    </View>
                 </View>
 
                 {/* <View style={styles.contentNew}>

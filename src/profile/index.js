@@ -63,24 +63,23 @@ export default function Perfil({ navigation }) {
         <ScrollView
             style={styles.container}
             showsVerticalScrollIndicator={false}>
+            <View style={styles.background02}>
+                <View style={styles.header}>
 
-            <View style={styles.header}>
+                    <Text style={{ fontSize: 17, fontWeight: 'bold', }}>Perfil</Text>
 
+                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil')}>
+                        <Image source={require('../../assets/edit-button-black.png')} />
+                    </TouchableOpacity>
+                </View>
 
-                <Text style={{ fontSize: 17, fontWeight: 'bold' }}>Perfil</Text>
+                <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
 
-                <TouchableOpacity onPress={() => navigation.navigate('EditPerfil')}>
-                    <Image source={require('../../assets/edit-button-black.png')} />
-                </TouchableOpacity>
+                <View style={styles.info}>
+                    <Text style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
+                    <Text style={styles.email_usuario}>simas@gmail.com</Text>
+                </View>
             </View>
-
-            <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
-
-            <View style={styles.info}>
-                <Text style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
-                <Text style={styles.email_usuario}>simas@gmail.com</Text>
-            </View>
-
             <View style={styles.background}>
 
 
