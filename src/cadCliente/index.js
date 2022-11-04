@@ -1,14 +1,8 @@
-import {
-    Text,
-    View,
-    KeyboardAvoidingView,
-    TextInput,
-    TouchableOpacity,
-    Animated,
-} from 'react-native';
+import { Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Animated } from 'react-native';
 
 import styles from './styles';
 import { useState, useEffect} from 'react';
+import api from '../services/api.js';
 
 export default function CadCliente({ navigation }) {
 
@@ -34,9 +28,37 @@ export default function CadCliente({ navigation }) {
         ]).start();
     }, []);
 
+    async function verCadastro() {  
+        let logou = false;
+        try {
+          let dadosUsu = {
+            nome, 
+            senha,
+            email,
+            documento
+          };
+          
+          const response = await api.post('usuarios/', dadosUsu);
+          logou = response.data.confirma; 
+        } catch (err) {
+            console.log('Erro: ' + err);
+        }
+    
+        if (logou) {
+          navigation.navigate('Tab');
+        } else {
+          alert('Falha no cadastro');
+        }
+        
+      }
+
+        const [nome, setNome] = useState(''); 
+        const [senha, setSenha] = useState(''); 
+        const [email, setEmail] = useState(''); 
+        const [documento, setDocumento] = useState(''); 
+
+
     return (
-
-
         <KeyboardAvoidingView style={styles.background}>
             <View style={styles.containerLogo}>
                 <Animated.Image style={{
@@ -48,22 +70,22 @@ export default function CadCliente({ navigation }) {
             <View style={styles.container}>
                 <TextInput style={styles.input} placeholder='Nome'
                     autoCorrect={false}
-                    onChangeText={() => { }}
+                    onChangeText={(nm) => setNome(nm)}
                 />
                 <TextInput style={styles.input} placeholder='CPF'
                     autoCorrect={false}
-                    onChangeText={() => { }}
+                    onChangeText={(cpf) => setDocumento(cpf)}
                 />
                 <TextInput style={styles.input} placeholder='Email'
                     autoCorrect={false}
-                    onChangeText={() => { }}
+                    onChangeText={(em) => setEmail(em)}
                 />
                 <TextInput style={styles.input} placeholder='Senha'
                     autoCorrect={false} secureTextEntry={true}
-                    onChangeText={() => { }}
+                    onChangeText={(sn) => setSenha(sn)}
                 />
                 <TouchableOpacity style={styles.btnSubmit}
-                    onPress={() => navigation.navigate('Tab')}>
+                    onPress={() => verCadastro()}>
                     <Text style={styles.txtSubmit}>Acessar</Text>
                 </TouchableOpacity>
             </View>

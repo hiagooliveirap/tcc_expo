@@ -4,8 +4,31 @@ import styles from './styles';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
 import img1 from '../../assets/product-7.jpg';
 
+import api from '../services/api.js';
+
 export default function Perfil({ navigation }) {
     const [tipoSel, setTipoSel] = useState([]);
+    const [name, setNome] = useState('');
+
+    async function verNome() { 
+        let nome = '';    
+        let email = '';   
+        let id = 0;     
+        try{
+            let dadosUsu = {
+                name
+              };
+          
+          const response = await api.post('usuarios/login', dadosUsu);
+          let nome = response.data.nome; 
+          let email = response.data.email;
+          let id = response.data.Id;
+          return nome
+        } catch(e){
+            console.log('Erro: ' + e)
+        }  
+    }
+    
 
     //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
     const [tipoProduto, setTipoProduto] = useState(
