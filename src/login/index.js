@@ -28,7 +28,7 @@ export default function Login({ navigation }) {
       if (logou) {
         navigation.navigate('Tab');
       } else {
-        alert('Erro!');
+        alert('Senha incorreta');
       }
       
     }
@@ -74,7 +74,7 @@ export default function Login({ navigation }) {
                 />
                 <TextInput style={styles.input} secureTextEntry={true} placeholder='Senha'
                     autoCorrect={false}
-                    onChangeText={setSenha}
+                    onChangeText={setSenha}                    
                 />
                 <TouchableOpacity style={styles.btnSubmit}
                     onPress={() => verLogin()}>

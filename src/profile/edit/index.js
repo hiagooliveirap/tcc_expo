@@ -6,15 +6,13 @@ export default function EditaPerfil({ navigation }) {
         <View style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
                         <Image source={require('../../../assets/arrow-back-black.png')} />
                     </TouchableOpacity>
                 </TouchableOpacity>
 
                 <Text style={styles.text_header}>Editar perfil</Text>
             </View>
-
-            <Image source={require('../../../assets/profile.jpg')} style={styles.foto} />
 
             <KeyboardAvoidingView style={styles.container_input}>
                 <TextInput

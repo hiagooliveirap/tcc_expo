@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         marginTop: 20,
         backgroundColor: '#F8F8F8',
-        elevation: 1,
+        // elevation: 1,
     },
     btn_salvar: {
         position: "absolute",
