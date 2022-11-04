@@ -8,29 +8,29 @@ export default function Login({ navigation }) {
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }));
     const [opacity] = useState(new Animated.Value(0));
 
-    const [login, setLogin] = useState('');
-    const [senha, setSenha] = useState('');
-  
-    async function verLogin() {  
-      let logou = false;
-      try {
-        let dadosUsu = {
-          login, 
-          senha
-        };
-        
-        const response = await api.post('usuarios/login', dadosUsu);
-        logou = response.data.confirma; 
-      } catch (err) {
-          console.log('Erro: ' + err);
-      }
-  
-      if (logou) {
-        navigation.navigate('Tab');
-      } else {
-        alert('Senha incorreta');
-      }
-      
+    const [login, setLogin] = useState('teste@terra.com.br');
+    const [senha, setSenha] = useState('123456');
+
+    async function verLogin() {
+        let logou = false;
+        try {
+            let dadosUsu = {
+                login,
+                senha
+            };
+
+            const response = await api.post('usuarios/login', dadosUsu);
+            logou = response.data.confirma;
+        } catch (err) {
+            console.log('Erro: ' + err);
+        }
+
+        if (logou) {
+            navigation.navigate('Tab');
+        } else {
+            alert('Senha incorreta');
+        }
+
     }
 
     useEffect(() => {
@@ -74,7 +74,7 @@ export default function Login({ navigation }) {
                 />
                 <TextInput style={styles.input} secureTextEntry={true} placeholder='Senha'
                     autoCorrect={false}
-                    onChangeText={setSenha}                    
+                    onChangeText={setSenha}
                 />
                 <TouchableOpacity style={styles.btnSubmit}
                     onPress={() => verLogin()}>
