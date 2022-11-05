@@ -12,9 +12,14 @@ import New from '../main/components/New';
 
 import img1 from '../../assets/product-7.jpg';
 
-export default function Main({ navigation }) {
+export default function Main({ navigation, route  }) {
     const [tipoSel, setTipoSel] = useState([]);
-
+    //const [nome, setNome] = useState(route.params.name);
+    // const receba = route.params.item;
+    
+    const nome = route.params.name
+    const id = route.params.id
+    const email = route.params.senha
     //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
     const [tipoProduto, setTipoProduto] = useState(
         [
@@ -80,7 +85,7 @@ export default function Main({ navigation }) {
                 <View style={styles.background}>
                     <Text style={styles.textPrincipal}>Bem Vindo!</Text>
                     <View style={styles.containerFoto}>
-                        <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
+                        <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>{nome}</Text>
                         <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
                     </View>
                     <View style={styles.containerInput}>

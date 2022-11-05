@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native';
 import styles from './styles';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
@@ -6,28 +6,38 @@ import img1 from '../../assets/product-7.jpg';
 
 import api from '../services/api.js';
 
-export default function Perfil({ navigation }) {
-    const [tipoSel, setTipoSel] = useState([]);
-    const [name, setNome] = useState('');
+export default function Perfil({ navigation, route, at }) {
 
-    async function verNome() { 
-        let nome = '';    
-        let email = '';   
-        let id = 0;     
-        try{
-            let dadosUsu = {
-                name
-              };
+    const id = route.params.id;
+    const [nome, setNome] = useState(route.params.name);
+    const [email,setEmail] = useState(route.params.email);
+    const item = {id, nome, email};
+    const [tipoSel, setTipoSel] = useState([]);
+
+    async function atCadastro() {  
+        let alterou = false;
+        try {
           
-          const response = await api.post('usuarios/login', dadosUsu);
-          let nome = response.data.nome; 
-          let email = response.data.email;
-          let id = response.data.Id;
-          return nome
-        } catch(e){
-            console.log('Erro: ' + e)
-        }  
-    }
+          const response = await api.get('usuarios/' + id);
+          alterou = response.data.confirma;
+          setNome(response.data.message.usuNome);
+          setEmail(response.data.message.usuEmail);
+          console.log(email); 
+        } catch (err) {
+            console.log('Erro: ' + err);
+            return false;
+        } 
+        
+            if (!alterou) {
+                alert('Falha na atualização');
+            }
+        
+      }
+
+      useEffect(() => {
+        atCadastro();
+      }, [at]);
+
     
 
     //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
@@ -68,7 +78,7 @@ export default function Perfil({ navigation }) {
 
                     <Text style={{ fontSize: 17, fontWeight: 'bold', }}>Perfil</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {item, atCadastro:atCadastro})}>
                         <Image source={require('../../assets/edit-button-black.png')} />
                     </TouchableOpacity>
                 </View>
@@ -76,8 +86,8 @@ export default function Perfil({ navigation }) {
                 <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
 
                 <View style={styles.info}>
-                    <Text style={styles.nome_usuario}>Simas Turbo Pinto da Silva</Text>
-                    <Text style={styles.email_usuario}>simas@gmail.com</Text>
+                    <Text style={styles.nome_usuario}>{nome}</Text>
+                    <Text style={styles.email_usuario}>{email}</Text>
                 </View>
             </View>
             <View style={styles.background}>
