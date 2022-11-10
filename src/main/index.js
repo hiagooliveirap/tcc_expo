@@ -17,7 +17,7 @@ export default function Main({ navigation, route  }) {
     //const [nome, setNome] = useState(route.params.name);
     // const receba = route.params.item;
     
-    const nome = route.params.name
+    const nome = route.params.nome
     const id = route.params.id
     const email = route.params.senha
     //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 

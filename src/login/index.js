@@ -15,7 +15,7 @@ export default function Login({ navigation }) {
     
     async function verLogin() {
         let logou = false;
-        let name = '';
+        let nome = '';
         let id = '';
         let email = '';
         let item = {};
@@ -28,10 +28,10 @@ export default function Login({ navigation }) {
 
             const response = await api.post('usuarios/login', dadosUsu);
             logou = response.data.confirma;
-            name = response.data.nome;
+            nome = response.data.nome;
             id = response.data.Id;
             email = response.data.email;
-            item= {id, name, email};
+            item= {id, nome, email};
             
         } catch (err) {
             console.log('Erro: ' + err);

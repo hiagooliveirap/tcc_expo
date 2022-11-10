@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Text, View, TouchableOpacity, Image, TextInput, KeyboardAvoidingView } from 'react-native';
 import styles from '../edit/styles';
 import api from '../../services/api';
@@ -8,6 +8,7 @@ export default function EditaPerfil({ navigation, route }) {
     const [nome, setNome] = useState(route.params.item.nome);    
     const [email, setEmail] = useState(route.params.item.email);   
     const at = true;
+    console.log(route.params.item)
 
     async function attCadastro() {  
         let alterou = false;
@@ -24,9 +25,10 @@ export default function EditaPerfil({ navigation, route }) {
         }
     
         if (alterou) {
-          navigation.navigate('Tab', at);
+            navigation.navigate('Tab', at); 
+          
         } else {
-          alert('Falha no cadastro');
+            alert('Falha no cadastro');
         }
         
       }
