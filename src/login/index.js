@@ -8,7 +8,7 @@ export default function Login({ navigation }) {
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }));
     const [opacity] = useState(new Animated.Value(0));
 
-    const [login, setLogin] = useState('thomasturbando13@gmail.com');
+    const [login, setLogin] = useState('thomasturbando22@gmail.com');
     const [senha, setSenha] = useState('123456');
 
 

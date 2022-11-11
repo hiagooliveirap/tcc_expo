@@ -86,7 +86,8 @@ export default function Main({ navigation, route  }) {
                     <Text style={styles.textPrincipal}>Bem Vindo!</Text>
                     <View style={styles.containerFoto}>
                         <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>{nome}</Text>
-                        <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
+                        <View style={styles.foto}>
+                        </View>
                     </View>
                     <View style={styles.containerInput}>
                         <Ionicons name='search-outline' size={20} color='#C5C5C6' />

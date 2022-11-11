@@ -31,9 +31,10 @@ const styles = StyleSheet.create({
     nome_usuario: {
         fontSize: 18,
         fontWeight: "bold",
+        color: "#FFF",
     },
     email_usuario: {
-        color: '#fff',
+        color: '#FFF',
     },
     container_favorito: {
         marginTop: '6%',

@@ -38,6 +38,7 @@ export default function RotasTab({route}) {
             <Tab.Screen
                 name='Buscar'
                 component={Produtos}
+                initialParams={route.params.item}
                 options={{
                     tabBarStyle: { height: 60 },
                     tabBarIconStyle: { marginTop: 8 },

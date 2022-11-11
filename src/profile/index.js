@@ -6,16 +6,17 @@ import img1 from '../../assets/product-7.jpg';
 
 import api from '../services/api';
 
-export default function Perfil({ navigation, route, at }) {
+export default function Perfil({ navigation, route, itens }) {
     const [exibe, setExibe] = useState(0);
     const id = route.params.id;
     const [nome, setNome] = useState(route.params.nome);
     const [email,setEmail] = useState(route.params.email);
     const item = {id, nome, email};
     const [tipoSel, setTipoSel] = useState([]);
+    
 
 
-        async function atCadastro() {  
+    async function atCadastro() {  
         let alterou = false;
         try {
           
@@ -27,7 +28,11 @@ export default function Perfil({ navigation, route, at }) {
         } catch (err) {
             console.log('Erro: ' + err);
             return false;
-        } 
+        } finally{
+            useEffect(() =>{
+                atCadastro()
+            }, [])
+        }
         
             if (!alterou) {
                 alert('Falha na atualização');
@@ -35,9 +40,7 @@ export default function Perfil({ navigation, route, at }) {
         
       }
 
-    useEffect(() => {
-        atCadastro();
-    }, []);
+
 
    
     
@@ -80,14 +83,16 @@ export default function Perfil({ navigation, route, at }) {
             <View style={styles.background02}>
                 <View style={styles.header}>
 
-                    <Text style={{ fontSize: 17, fontWeight: 'bold', }}>Perfil</Text>
+                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFF' }}>Perfil</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {item})}>
-                        <Image source={require('../../assets/edit-button-black.png')} />
+                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {item, atCadastro})}>
+                        <Image source={require('../../assets/edit-button-white.png')} />
                     </TouchableOpacity>
                 </View>
+                <View style={styles.foto}>
+                </View>
 
-                <Image source={require('../../assets/profile.jpg')} style={styles.foto} />
+                {/* <Image source={require('../../assets/profile.jpg')} style={styles.foto} /> */}
 
                 <View style={styles.info}>
                     <Text style={styles.nome_usuario}>{nome}</Text>
