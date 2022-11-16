@@ -10,7 +10,7 @@ import styles from '../cadCliente/styles';
 
 const Tab = createBottomTabNavigator();
 
-export default function RotasTab() {
+export default function RotasTab({route}) {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -23,6 +23,7 @@ export default function RotasTab() {
 
             <Tab.Screen
                 name='Início'
+                initialParams={route.params.item}
                 component={Main}
                 options={{
                     tabBarStyle: { height: 60 },
@@ -37,6 +38,7 @@ export default function RotasTab() {
             <Tab.Screen
                 name='Buscar'
                 component={Produtos}
+                initialParams={route.params.item}
                 options={{
                     tabBarStyle: { height: 60 },
                     tabBarIconStyle: { marginTop: 8 },
@@ -49,6 +51,7 @@ export default function RotasTab() {
             />
             <Tab.Screen
                 name='Perfil'
+                initialParams={route.params.item}
                 component={Perfil}
                 options={{
                     tabBarStyle: { height: 60 },

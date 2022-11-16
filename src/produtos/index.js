@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Text, View, TextInput, TouchableOpacity, SafeAreaView, FlatList } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CardItem from './card_item';
@@ -19,10 +20,11 @@ export default function Produtos({ navigation }) {
   //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
   const [tipoProduto, setTipoProduto] = useState(
     [
-      { id: 0, tipo: 'Tipo' },
+      { id: 0, tipo: 'Tudo' },
       { id: 1, tipo: 'Lanche' },
-      { id: 2, tipo: 'Porção' },
-      { id: 3, tipo: 'Suco' }
+      { id: 2, tipo: 'Cachorro Quente' },
+      { id: 3, tipo: 'Pizza' },
+      { id: 4, tipo: 'Porção' }
     ]
   );
 
@@ -65,19 +67,36 @@ export default function Produtos({ navigation }) {
             underlineColorAndroid='transparent'
           />
         </View>
+
+        <View style={styles.container_cidade}>
+          <Ionicons name='location-outline' size={22} color='#FFF' />
+          <Text style={styles.textoCidade}>Filtrando por: Tupã</Text>
+        </View>
       </View>
 
       <View style={styles.containerFiltros}>
-        <TouchableOpacity style={styles.itemFiltrosSelecionado}>
-          <Ionicons name='options-outline' size={14} color='#FFF' style={{ marginLeft: 5 }} />
-          <Text style={styles.textFiltrosSelecionado}>Filtrar</Text>
+      <TouchableOpacity style={styles.itemFiltrosSelecionado}>
+        <Picker
+          selectedValue={tipoSel}
+          style={styles.itemOrdenar}
+          onValueChange={(itemValue) => setTipoSel(itemValue)}
+        >
+            {tipoProduto.map(tp => {
+              return <Picker.Item label={tp.tipo} value={tp.id} key={tp.id} />
+            })}
+        </Picker>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.itemOrdenar}>
+        {/* <TouchableOpacity style={styles.itemFiltrosSelecionado}>
+          <Ionicons name='options-outline' size={14} color='#FFF' style={{ marginLeft: 5 }} />
+          <Text style={styles.textFiltrosSelecionado}>Filtrar</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.itemOrdenar}>
           <Ionicons name='filter-outline' size={14} color='#FFA500' style={{ marginLeft: 5 }} />
           <Text style={styles.textFiltros}>Ordenar</Text>
-        </TouchableOpacity>
-      </View>
+        </TouchableOpacity> */}
+      </View>        
 
       <SafeAreaView>
         <FlatList
