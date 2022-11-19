@@ -19,7 +19,7 @@ export default function CardItem({item, navigation}) {
                 </View>
                 <View style={styles.containerValor}>
                     <Text style={{ color: '#FFA500', marginTop: 6, fontSize: 12, fontWeight: 'bold'}}>R$</Text>            
-                    <Text style={styles.txtValor}>{item.tamPreco}</Text>            
+                    <Text style={styles.txtValor}>{item.proPreco}</Text>            
                 </View>    
         </TouchableOpacity>        
     )

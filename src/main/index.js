@@ -1,25 +1,61 @@
 import { useState, useEffect } from 'react';
 import { BottomTabView } from '@react-navigation/bottom-tabs';
-import { Text, View, TextInput, TouchableOpacity, ScrollView, Image, SafeAreaView, FlatList } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, ScrollView, Image, SafeAreaView, FlatList, LogBox } from 'react-native';
 import { useFonts, Poppins_400Regular, Poppins_600SemiBold, Poppins_500Medium } from '@expo-google-fonts/poppins';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import { Feather } from '@expo/vector-icons';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
 
 import SwiperComponent from './components/swiper.js';
 import New from '../main/components/New';
+import api from '../services/api'
 
 import img1 from '../../assets/product-7.jpg';
 
 export default function Main({ navigation, route  }) {
+    /* Ocultando o erro de ScrollView e FlatList */
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);    
+
     const [tipoSel, setTipoSel] = useState([]);
     //const [nome, setNome] = useState(route.params.name);
     // const receba = route.params.item;
     
     const nome = route.params.nome
     const id = route.params.id
-    const email = route.params.senha
+    const email = route.params.email
+    const info = {id, nome, email}
+    console.log(info)
+
+    const [produtos, setProdutos] = useState([]);
+    const [produtos2, setProdutos2] = useState([]);
+
+    
+    async function listaAleatorio(){
+        try{
+            const response = await api.get('produtosal')
+            setProdutos(response.data.message)
+        } catch(e){
+            setProdutos([])
+            console.log('ERRO: ' + e)
+        }  
+    }
+    async function listaAleatorio2(){
+        try{
+            const response = await api.get('produtosal')
+            setProdutos2(response.data.message)
+        } catch(e){
+            setProdutos2([])
+            console.log('ERRO: ' + e)
+        }  
+    }
+
+    useEffect(() => {
+        listaAleatorio(),
+        listaAleatorio2()
+    }, [])
+     
+
+    
     //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
     const [tipoProduto, setTipoProduto] = useState(
         [
@@ -29,23 +65,6 @@ export default function Main({ navigation, route  }) {
             { id: 3, tipo: 'Suco' }
         ]
     );
-
-    // produtos
-    const [produtos, setProdutos] = useState([
-        { proId: 0, proNome: 'Teste', img: img1, valor: '15,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.' },
-        { proId: 1, proNome: 'Lanche de Peixe', img: img1, valor: '25,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.' },
-        { proId: 2, proNome: 'Bolo', img: img1, valor: '10,00', avaliacao: 4.3, descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.' },
-        { proId: 3, proNome: 'Fritas rústica da casa ao lado do vizinho', img: img1, valor: '19,00', avaliacao: 4.3 },
-        { proId: 4, proNome: 'Suco de laranja', img: img1, valor: '8,25', avaliacao: 4.3 },
-        { proId: 5, proNome: 'Suco verde', img: img1, valor: '12,00', avaliacao: 4.3 },
-        { proId: 6, proNome: 'Suco', img: img1, valor: '13,00', avaliacao: 4.3 },
-        { proId: 7, proNome: 'Suco', img: img1, valor: '14,00', avaliacao: 4.3 },
-        { proId: 8, proNome: 'Suco', img: img1, valor: '15,00', avaliacao: 4.3 },
-        { proId: 9, proNome: 'Suco', img: img1, valor: '16,00', avaliacao: 4.3 },
-        { proId: 10, proNome: 'Suco', img: img1, valor: '17,00', avaliacao: 4.3 },
-        { proId: 11, proNome: 'Suco', img: img1, valor: '18,00', avaliacao: 4.3 },
-        { proId: 12, proNome: 'Suco', img: img1, valor: '19,00', avaliacao: 4.3 },
-    ]);
 
     const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1);
@@ -83,11 +102,13 @@ export default function Main({ navigation, route  }) {
             <ScrollView showsVerticalScrollIndicator={false}>
 
                 <View style={styles.background}>
-                    <Text style={styles.textPrincipal}>Bem Vindo!</Text>
+                    <Text style={styles.textPrincipal}>Bem Vindo(a)</Text>
                     <View style={styles.containerFoto}>
                         <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>{nome}</Text>
-                        <View style={styles.foto}>
-                        </View>
+                        <TouchableOpacity onPress={() => navigation.navigate('Perfil', {info})}>
+                            <View style={styles.foto}>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.containerInput}>
                         <Ionicons name='search-outline' size={20} color='#C5C5C6' />
@@ -113,9 +134,6 @@ export default function Main({ navigation, route  }) {
 
                 <View style={styles.contentNew}>
                     <Text style={styles.title}>Novidades</Text>
-                    <TouchableOpacity>
-                        <Text style={{ color: '#FFA500', marginRight: 20, fontWeight: "bold" }}>Ver mais</Text>
-                    </TouchableOpacity>
                 </View>
 
                 <View>
@@ -147,7 +165,7 @@ export default function Main({ navigation, route  }) {
                             onPress={() => { }}
                         /> */}
                             <FlatList
-                                data={produtos}
+                                data={produtos2}
                                 renderItem={({ item }) => <New item={item} navigation={navigation} />}
                                 keyExtractor={item => item.proId}
                                 numColumns={1}
@@ -165,9 +183,6 @@ export default function Main({ navigation, route  }) {
 
                 <View style={styles.containerPopular}>
                     <Text style={styles.title}>Mais populares</Text>
-                    <TouchableOpacity>
-                        <Text style={{ color: '#FFA500', marginRight: 20, fontWeight: "bold" }}>Ver mais</Text>
-                    </TouchableOpacity>
                 </View>
 
                 <SafeAreaView>

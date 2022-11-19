@@ -7,7 +7,7 @@ export default function EditaPerfil({ navigation, route }) {
     const id = route.params.item.id
     const [nome, setNome] = useState(route.params.item.nome);    
     const [email, setEmail] = useState(route.params.item.email);
-    const items = {id, nome, email}   
+    const info = {id, nome, email}   
     const at = true;
     const funcao = route.params.atCadastro
     console.log(funcao)
@@ -45,7 +45,7 @@ export default function EditaPerfil({ navigation, route }) {
         <View style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Tab', at)}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Perfil', {info})}>
                         <Image source={require('../../../assets/arrow-back-black.png')} />
                     </TouchableOpacity>
                 </TouchableOpacity>

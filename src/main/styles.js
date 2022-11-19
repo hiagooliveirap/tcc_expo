@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
         height: 170,
     },
     textPrincipal: {
-        fontSize: 16,
+        fontSize: 13,
         fontWeight: "bold",
         marginLeft: 20,
         marginTop: 15,
-        color: '#000',
+        color: '#FFF',
     },
     nome_usuario: {
         marginLeft: 20,

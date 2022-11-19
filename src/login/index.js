@@ -8,8 +8,8 @@ export default function Login({ navigation }) {
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }));
     const [opacity] = useState(new Animated.Value(0));
 
-    const [login, setLogin] = useState('thomasturbando22@gmail.com');
-    const [senha, setSenha] = useState('123456');
+    const [login, setLogin] = useState('fulano@yahoo.com');
+    const [senha, setSenha] = useState('12345');
 
 
     
@@ -18,7 +18,7 @@ export default function Login({ navigation }) {
         let nome = '';
         let id = '';
         let email = '';
-        let item = {};
+        let info = {}
 
         try {
             let dadosUsu = {
@@ -31,13 +31,15 @@ export default function Login({ navigation }) {
             nome = response.data.nome;
             id = response.data.Id;
             email = response.data.email;
-            item= {id, nome, email};
+            info = {id, nome, email};
+            
             
         } catch (err) {
             console.log('Erro: ' + err);
         } finally{
             if (logou) {
-                navigation.navigate('Tab', {item});
+                // console.log(info);
+                navigation.navigate('Tab', {info});
             } else {
                 alert('Senha incorreta');
             }

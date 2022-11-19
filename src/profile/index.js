@@ -6,13 +6,15 @@ import img1 from '../../assets/product-7.jpg';
 
 import api from '../services/api';
 
-export default function Perfil({ navigation, route, itens }) {
+export default function Perfil({ navigation, route }) {
     const [exibe, setExibe] = useState(0);
-    const id = route.params.id;
-    const [nome, setNome] = useState(route.params.nome);
-    const [email,setEmail] = useState(route.params.email);
+    const id = route.params.info.id;
+    const [nome, setNome] = useState(route.params.info.nome);
+    const [email,setEmail] = useState(route.params.info.email);
     const item = {id, nome, email};
     const [tipoSel, setTipoSel] = useState([]);
+    const info = {id, nome, email}
+    console.log(info)
     
 
 

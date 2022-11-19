@@ -8,12 +8,12 @@ export default function New({ item, navigation }) {
   return (
     <TouchableOpacity onPress={() => navigation.navigate('ItemProduto', { item })} style={styles.container}>
       <Image
-        source={item.img}
+        source={{uri: item.proImagem}}
         style={styles.cover}
       />
 
       <View style={styles.content}>
-        <Text style={styles.title} numberOfLines={1} ellipsizeMode='tail'>{item.nome}</Text>
+        <Text style={styles.title} numberOfLines={1} ellipsizeMode='tail'>{item.proNome}</Text>
 
         <View style={styles.dot}></View>
         <View>
@@ -23,7 +23,7 @@ export default function New({ item, navigation }) {
 
       <View style={styles.footer}>
         <View style={{ width: '80%' }}>
-          <Text style={styles.price}>R$ {item.valor}</Text>
+          <Text style={styles.price}>R$ {item.proPreco}</Text>
         </View>
       </View>
     </TouchableOpacity>

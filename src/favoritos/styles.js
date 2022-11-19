@@ -1,153 +1,47 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         padding: 8,
         width: '100%',
     },
-    caixa: {
-        flex: 1,
-        backgroundColor: '#f8f8f8',
-        margin: 13,
-        borderRadius: 20,
-        width: '96%',
-        flexDirection: 'column',
-        elevation: 4,
-    },
     header: {
-        //paddingTop:2,
-        marginTop: 10,
-        marginLeft: 10,
-        //flex:1,
-        //backgroundColor:'#000',
-        //width:'100%',
-        height: '15%',
-        //alignItems:'flex-end',
-        justifyContent: 'flex-start',
-        flexDirection: 'row',
-        borderBottomColor: 'black',
-        borderStyle: 'solid',
-        borderBottomEndRadius: 2
-
-    },
-    borda: {
-        marginTop: 5,
-        marginLeft: '2%',
-        width: '95%',
-        height: 2,
-        backgroundColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center'
+        width: '100%',
+        marginLeft: 16,
+        flexDirection: "row",
+        marginTop: 30,
+        marginBottom: 40,
+        alignItems: "center",
     },
     foto: {
-        marginBottom: '3%',
-        backgroundColor: 'red',
-        height: 80,
-        width: 80,
+        marginBottom: '10%',
+        backgroundColor: '#000',
+        height: 120,
+        width: 120,
         borderRadius: 100,
+        alignSelf: "center",
+        marginTop: '10%',
     },
-    info: {
-        //backgroundColor:'#D6D6D6',
-        height: '100%',
-        width: '73%'
+    btn_salvar: {
+        position: "absolute",
+        width: '104%',
+        bottom: 0,
+        alignItems: "center",
+        justifyContent: 'center',
+        height: 80,
+        backgroundColor: '#008000',
     },
-    nome: {
-        fontSize: 22,
+    text_btn_salvar: {
+        color: '#FFF',
+    },
+    text_header: {
+        fontSize: 17,
         fontWeight: 'bold',
-        alignContent: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-        marginLeft: 7
-    },
-    local: {
-        fontSize: 15,
-        alignContent: 'center',
-        justifyContent: 'center',
-        marginTop: 15,
-        marginLeft: 7
-    },
-    body: {
-        flex: 1,
-        position: 'relative',
-        //backgroundColor:'blue',
-        // width:'100%',
-        // height:'70%',
-    },
-    menu: {
-        flex: 1,
-        position: 'relative',
-        //backgroundColor:'yellow',
-        marginBottom: '20%'
-    },
-    textoMenu: {
-        // marginTop:'3%',
-        // marginBottom:'3%',
-        marginLeft: '5%',
-        fontSize: 19,
-        fontWeight: 'bold'
-    },
-    textoTitulo: {
-        justifyContent: 'center',
-        textAlign: 'center',
-        marginTop: '3%',
-        marginBottom: '3%',
-        fontSize: 24,
-        fontWeight: 'bold'
-    },
-    textoEndereco: {
-        // marginTop:'3%',
-        // marginBottom:'3%',
-        marginLeft: '5%',
-        fontSize: 14,
-    },
-    footer: {
-        //flex:1,
-        height: '20%',
-        //backgroundColor:'orange',
-        position: 'relative',
-        alignContent: 'center',
-        //alignItems:'center',
-        justifyContent: 'center',
-    },
-    sair: {
-        marginLeft: '20%',
-        alignContent: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '40%',
-        width: '60%',
-        backgroundColor: 'orange',
-        borderRadius: 7,
-        elevation: 3,
-    },
-    sairTexto: {
-        fontSize: 22,
-        fontWeight: 'bold',
-    },
-    text: {
-        fontSize: 16,
-    },
-    itemFavorito: {
-        backgroundColor: '#fff',
-        elevation: 2,
-        marginTop: '3%',
-        marginBottom: '3%',
         width: '90%',
-        marginLeft: '5%',
-        paddingTop: '2%',
-        paddingBottom: '2%',
-        borderRadius: 3,
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 5
-    }
+        textAlign: 'center',
+    },
 });
 
-export default styles;
+export default styles;  

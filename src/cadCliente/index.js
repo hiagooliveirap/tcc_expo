@@ -45,7 +45,7 @@ export default function CadCliente({ navigation }) {
         }
     
         if (logou) {
-          navigation.navigate('Tab');
+          navigation.navigate('Login');
         } else {
           alert('Falha no cadastro');
         }
@@ -86,7 +86,7 @@ export default function CadCliente({ navigation }) {
                 />
                 <TouchableOpacity style={styles.btnSubmit}
                     onPress={() => verCadastro()}>
-                    <Text style={styles.txtSubmit}>Acessar</Text>
+                    <Text style={styles.txtSubmit}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
 

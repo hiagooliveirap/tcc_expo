@@ -11,7 +11,7 @@ export default function ItemProduto({ route, navigation }) {
             <View style={styles.containerHeader}>
                 <ImageBackground source={{uri: route.params.item.proImagem}} style={styles.imgPrincipal}>
                     <View style={styles.containerHeaderBotoes}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Tab')}>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
                             <Image source={iconeVoltar} style={{ width: 34, height: 34 }} />
                         </TouchableOpacity>
 
@@ -27,7 +27,7 @@ export default function ItemProduto({ route, navigation }) {
                     <Text style={styles.TextCategoria}>Lanches</Text>
                     <View style={styles.containerTituloPreco}>
                         <Text style={styles.TextTitulo}>{route.params.item.proNome}</Text>
-                        <Text style={styles.TextPreco}>R$ {route.params.item.tamPreco}</Text>
+                        <Text style={styles.TextPreco}>R$ {route.params.item.proPreco}</Text>
                     </View>
                     {/* <View style={styles.avaliacao}>                    
                     <Text style={styles.textAvaliacao}>4.3</Text>

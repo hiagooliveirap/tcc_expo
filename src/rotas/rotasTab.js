@@ -7,6 +7,7 @@ import Main from '../main';
 import Produtos from '../produtos';
 import Perfil from '../profile';
 import styles from '../cadCliente/styles';
+import Favoritos from '../favoritos';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +24,7 @@ export default function RotasTab({route}) {
 
             <Tab.Screen
                 name='Início'
-                initialParams={route.params.item}
+                initialParams={route.params.info}
                 component={Main}
                 options={{
                     tabBarStyle: { height: 60 },
@@ -38,7 +39,7 @@ export default function RotasTab({route}) {
             <Tab.Screen
                 name='Buscar'
                 component={Produtos}
-                initialParams={route.params.item}
+                initialParams={route.params.info}
                 options={{
                     tabBarStyle: { height: 60 },
                     tabBarIconStyle: { marginTop: 8 },
@@ -49,7 +50,7 @@ export default function RotasTab({route}) {
                     },
                 }}
             />
-            <Tab.Screen
+            {/* <Tab.Screen
                 name='Perfil'
                 initialParams={route.params.item}
                 component={Perfil}
@@ -60,6 +61,20 @@ export default function RotasTab({route}) {
                     tabBarIcon: ({ focused }) => {
                         let color = focused ? '#FFa500' : 'gray';
                         return <Ionicons name='person-outline' size={30} color={color} />;
+                    },
+                }}
+            /> */}
+            <Tab.Screen
+                name='Favoritos'
+                component={Favoritos}
+                initialParams={route.params.info}
+                options={{
+                    tabBarStyle: { height: 60 },
+                    tabBarIconStyle: { marginTop: 8 },
+                    tabBarLabelStyle: { marginBottom: 10 },
+                    tabBarIcon: ({ focused }) => {
+                        let color = focused ? '#FFa500' : 'gray';
+                        return <Ionicons name='heart-outline' size={30} color={color} />;
                     },
                 }}
             />
