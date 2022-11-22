@@ -4,6 +4,7 @@ import styles from './styles';
 import api from '../services/api';
 import img1 from '../../assets/product-7.jpg';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
+import CardItemFavoritos from './card_item_favoritos';
 
 export default function Favoritos({navigation, route}) {
     const [tipoProduto, setTipoProduto] = useState(
@@ -23,7 +24,7 @@ export default function Favoritos({navigation, route}) {
         console.log(id)
         async function listaFavorito() {
             try {
-              const response = await api.get('favoritos/' + 1);
+              const response = await api.get('favoritos/' + id);
               setProdutos(response.data.message);
             } catch (e) {
               setProdutos([]);
@@ -43,7 +44,7 @@ export default function Favoritos({navigation, route}) {
 
             <FlatList
                     data={produtos}
-                    renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} />}
+                    renderItem={({ item }) => <CardItemFavoritos item={item} navigation={navigation} listaFavorito = {listaFavorito} />}
                     keyExtractor={item => item.usu_id}
                     numColumns={1}
                     style={styles.flat}

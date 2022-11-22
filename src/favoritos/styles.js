@@ -42,6 +42,46 @@ const styles = StyleSheet.create({
         width: '90%',
         textAlign: 'center',
     },
+    containerHorizontal: {
+        width: '95%',
+        flexDirection: "row",
+        alignItems: "center",
+        height: 120,
+        margin: 7,
+        marginBottom: 5,
+        borderRadius: 25,
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: '#E0E0E0',
+    },
+    imgHorizontal: {
+        width: '25%',
+        height: '80%',
+        marginLeft: 12,
+        borderRadius: 25,
+        borderBottomColor: '#000',
+        borderColor: '#E0E0E0',
+    },
+    containerValorHorizontal: {
+        flex: 1,
+        marginRight: 15,
+        marginLeft: 20,
+    },
+    txtNomeHorizontal: {
+        marginBottom: 15,
+        fontSize: 18,
+        fontWeight: "bold",
+        maxWidth: 150,
+    },
+    txtValorHorizontal: {
+        color: '#FFA500',
+        fontWeight: "600",
+    },
+    deletar: {
+        alignSelf: 'flex-end',
+
+        marginRight: 20
+    }
 });
 
 export default styles;  
