@@ -1,13 +1,15 @@
-import { Text, View, ImageBackground, Image, TouchableOpacity, Touchable, ScrollView } from 'react-native';
+import { Text, View, ImageBackground, Image, TouchableOpacity, Touchable, ScrollView, Linking  } from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Foto from '../../assets/blog-3.jpg';
 import iconeVoltar from '../../assets/arrow.png';
+import iconeAddFav from '../../assets/love.png';
 
 export default function ItemProduto({ route, navigation }) {
-    return (
-        <View style={styles.container}>
+    const zap = 'https://wa.me/55' + route.params.item.estTelefone    
+    return (        
+        <View style={styles.container}>            
             <View style={styles.containerHeader}>
                 <ImageBackground source={{uri: route.params.item.proImagem}} style={styles.imgPrincipal}>
                     <View style={styles.containerHeaderBotoes}>
@@ -15,9 +17,9 @@ export default function ItemProduto({ route, navigation }) {
                             <Image source={iconeVoltar} style={{ width: 34, height: 34 }} />
                         </TouchableOpacity>
 
-                        {/* <TouchableOpacity>
-                            <Ionicons name="heart-circle" size={40} color="#FFA500" />
-                        </TouchableOpacity> */}
+                        <TouchableOpacity>
+                            <Image source={iconeAddFav} style={{ width: 40, height: 40 }} />
+                        </TouchableOpacity>
                     </View>
                 </ImageBackground>
             </View>
@@ -26,7 +28,7 @@ export default function ItemProduto({ route, navigation }) {
                 <View style={styles.containerBody}>
                     <Text style={styles.TextCategoria}>Lanches</Text>
                     <View style={styles.containerTituloPreco}>
-                        <Text style={styles.TextTitulo}>{route.params.item.proNome}</Text>
+                        <Text style={styles.TextTitulo}>{route.params.item.proNome} ({route.params.item.tamNome})</Text>
                         <Text style={styles.TextPreco}>R$ {route.params.item.proPreco}</Text>
                     </View>
                     {/* <View style={styles.avaliacao}>                    
@@ -39,8 +41,9 @@ export default function ItemProduto({ route, navigation }) {
             </ScrollView>
 
 
-            <TouchableOpacity style={styles.containerFooter}>
-                <Text style={{ color: '#FFF', fontSize: 15 }}>Adicionar aos favoritos</Text>
+            <TouchableOpacity style={styles.containerFooter} onPress={() => Linking.openURL(zap)}>
+                <Image source={require('../../assets/whatsapp.png')} style={{ marginRight: 5}}/>
+                <Text style={{ color: '#FFF', fontSize: 15, fontWeight: 'bold' }}>Chamar a véia no zap</Text>
             </TouchableOpacity>
         </View>
     );

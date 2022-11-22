@@ -56,9 +56,10 @@ const styles = StyleSheet.create({
         bottom: 12,
         marginLeft: 14,
         alignItems: "center",        
-        justifyContent: 'center',       
+        justifyContent: 'center',   
+        flexDirection: "row",    
         height: 50, 
-        backgroundColor: '#FFA500',
+        backgroundColor: '#34af23',
         borderRadius: 25,
     },
     TextCategoria: {

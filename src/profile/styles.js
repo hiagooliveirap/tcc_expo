@@ -3,8 +3,8 @@ import { StyleSheet, Dimensions } from "react-native";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
-        //padding: 8,
+        backgroundColor: '#FFF',
+        // padding: 8,
         width: '100%',
     },
     header: {
@@ -12,8 +12,7 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         flexDirection: "row",
         justifyContent: 'space-between',
-        marginTop: 30,
-
+        marginTop: 20,
     },
     foto: {
         marginBottom: '3%',
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
         width: 120,
         borderRadius: 100,
         alignSelf: "center",
-        marginTop: '6%',
+        marginTop: '10%',
     },
     info: {
         alignItems: "center",
@@ -36,14 +35,19 @@ const styles = StyleSheet.create({
     email_usuario: {
         color: '#FFF',
     },
-    container_favorito: {
-        marginTop: '6%',
-        marginLeft: 16,
-        marginRight: 20,
-        flexDirection: "row",
-        justifyContent: 'space-between',
+    containerFooter: {
+        position: "absolute",
+        width: '92%',
+        bottom: 12,
+        marginLeft: 14,
+        alignItems: "center",        
+        justifyContent: 'center',       
+        height: 50, 
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+        borderColor: '#FF0000',
+        borderRadius: 5,
     },
-
     background02: {
         backgroundColor: '#FFA500',
         height: 300,
@@ -56,10 +60,6 @@ const styles = StyleSheet.create({
     contador_favorito: {
         color: '#FFA500',
         fontWeight: "bold",
-    },
-    flat: {
-        marginTop: 10,
-        marginBottom: Dimensions.get('window').height / 100,
     },
 });
 

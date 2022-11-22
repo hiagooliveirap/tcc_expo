@@ -79,11 +79,12 @@ export default function Perfil({ navigation, route }) {
 
 
     return (
-        <ScrollView
-            style={styles.container}
-            showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
             <View style={styles.background02}>
                 <View style={styles.header}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <Image source={require('../../assets/arrow-back-white.png')} />
+                    </TouchableOpacity>  
 
                     <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFF' }}>Perfil</Text>
 
@@ -101,28 +102,11 @@ export default function Perfil({ navigation, route }) {
                     <Text style={styles.email_usuario}>{email}</Text>
                 </View>
             </View>
-            <View style={styles.background}>
-
-
-                <View style={styles.container_favorito}>
-                    <Text style={styles.titulo_favorito}>Meus favoritos</Text>
-                    <Text style={styles.contador_favorito}>22</Text>
-                </View>
-
-                <FlatList
-                    data={produtos}
-                    renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} />}
-                    keyExtractor={item => item.id}
-                    numColumns={1}
-                    style={styles.flat}
-                    showsVerticalScrollIndicator={false}
-                    showsHorizontalScrollIndicator={false}
-                    disableScrollViewPanResponder={true}
-                    scrollEnabled={false}
-                    nestedScrollEnabled={false}
-                />
-            </View>
-        </ScrollView>
+            
+            <TouchableOpacity style={styles.containerFooter}>
+                <Text style={{ color: '#FF0000', fontSize: 15, fontWeight: 'bold'}}>Sair</Text>
+            </TouchableOpacity>
+        </View>
     );    
     // const [nome, setNome] = useState(route.params.name);
     // const [email,setEmail] = useState(route.params.email);
