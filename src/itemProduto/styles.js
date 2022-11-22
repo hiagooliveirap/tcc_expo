@@ -27,8 +27,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        width: '90%',  
+        width: '80%',  
         marginLeft: 5,
+        marginRight: 10
     },
     TextTitulo: {
         fontSize: 24,
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         fontSize: 20,
         fontWeight: "bold",
+        marginRight: 15
     },
     TextDescricao: {
         fontSize: 16,        
@@ -67,7 +69,8 @@ const styles = StyleSheet.create({
         marginRight: 14,
         marginTop: 18,
         marginBottom: -3,
-        color: '#808080',        
+        color: '#808080',
+        fontSize: 17        
     },
     btnAdicionar: {
         height: 45,

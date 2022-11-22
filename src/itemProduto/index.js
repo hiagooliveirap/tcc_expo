@@ -7,7 +7,7 @@ import iconeVoltar from '../../assets/arrow.png';
 import iconeAddFav from '../../assets/love.png';
 
 export default function ItemProduto({ route, navigation }) {
-    const zap = 'https://wa.me/55' + route.params.item.estTelefone    
+    const zap = 'https://wa.me/55' + route.params.item.estWhatsapp    
     return (        
         <View style={styles.container}>            
             <View style={styles.containerHeader}>
@@ -26,7 +26,7 @@ export default function ItemProduto({ route, navigation }) {
 
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.containerBody}>
-                    <Text style={styles.TextCategoria}>Lanches</Text>
+                    <Text style={styles.TextCategoria}>{route.params.item.estNome}</Text>
                     <View style={styles.containerTituloPreco}>
                         <Text style={styles.TextTitulo}>{route.params.item.proNome} ({route.params.item.tamNome})</Text>
                         <Text style={styles.TextPreco}>R$ {route.params.item.proPreco}</Text>
@@ -42,8 +42,8 @@ export default function ItemProduto({ route, navigation }) {
 
 
             <TouchableOpacity style={styles.containerFooter} onPress={() => Linking.openURL(zap)}>
-                <Image source={require('../../assets/whatsapp.png')} style={{ marginRight: 5}}/>
-                <Text style={{ color: '#FFF', fontSize: 15, fontWeight: 'bold' }}>Chamar a véia no zap</Text>
+                <Image source={require('../../assets/whatsapp.png')} style={{ marginRight: 15}}/>
+                <Text style={{ color: '#FFF', fontSize: 15, fontWeight: 'bold' }}>Pedir pelo Whatsapp</Text>
             </TouchableOpacity>
         </View>
     );
