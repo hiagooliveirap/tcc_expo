@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { faCentercode } from '@fortawesome/free-brands-svg-icons';
+import { faBorderNone } from '@fortawesome/free-solid-svg-icons';
 
 export default function New({ item, navigation }) {
   return (
@@ -33,13 +34,14 @@ export default function New({ item, navigation }) {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    backgroundColor: '#fff',
-    height: 255,
+    backgroundColor: '#FFF',
+    height: 230,
     width: 200,
-    elevation: 2,
+    // elevation: 2,
     borderRadius: 10,
+    borderWidth: 0,
     padding: 15,
-    marginRight: 30,
+    marginRight: 12,
     marginLeft: 2,
     marginBottom: 5,
   },
