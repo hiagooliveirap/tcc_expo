@@ -24,7 +24,7 @@ export default function CardItemFavoritos({item, navigation, listaFavorito}) {
                 <Image style={styles.imgHorizontal} source={{uri: item.proImagem}}/>                                
                 <View style={styles.containerValorHorizontal}>           
                     <Text numberOfLines={1} ellipsizeMode='tail' style={styles.txtNomeHorizontal} >{item.proNome}</Text> 
-                                                                           
+                    <Text style={styles.TextCategoria}>{item.estNome}</Text>                                                       
                     <Text style={styles.txtValorHorizontal}>R$ {item.proPreco}</Text>           
                 </View>
                 <TouchableOpacity onPress={() =>{deletaFavorito(item.usu_id, item.pro_id)}}>

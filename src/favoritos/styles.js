@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     txtNomeHorizontal: {
-        marginBottom: 15,
+        marginBottom: 3,
         fontSize: 18,
         fontWeight: "bold",
         maxWidth: 150,
@@ -76,12 +76,18 @@ const styles = StyleSheet.create({
     txtValorHorizontal: {
         color: '#FFA500',
         fontWeight: "600",
+        fontSize:17
     },
     deletar: {
         alignSelf: 'flex-end',
 
         marginRight: 20
-    }
+    },
+    TextCategoria: {
+        marginBottom:3,
+        color: '#808080',
+        fontSize: 17        
+    },
 });
 
 export default styles;  

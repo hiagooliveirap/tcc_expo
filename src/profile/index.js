@@ -11,7 +11,6 @@ export default function Perfil({ navigation, route }) {
     const id = route.params.info.id;
     const [nome, setNome] = useState(route.params.info.nome);
     const [email,setEmail] = useState(route.params.info.email);
-    const item = {id, nome, email};
     const [tipoSel, setTipoSel] = useState([]);
     const info = {id, nome, email}
     console.log(info)
@@ -53,7 +52,7 @@ export default function Perfil({ navigation, route }) {
 
                     <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFF' }}>Perfil</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {item, atCadastro})}>
+                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {info, atCadastro: atCadastro})}>
                         <Image source={require('../../assets/edit-button-white.png')} />
                     </TouchableOpacity>
                 </View>

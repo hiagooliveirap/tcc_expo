@@ -3,15 +3,14 @@ import { Text, View, TouchableOpacity, Image, TextInput, KeyboardAvoidingView } 
 import styles from '../edit/styles';
 import api from '../../services/api';
 
-export default function EditaPerfil({ navigation, route }) {
-    const id = route.params.item.id
-    const [nome, setNome] = useState(route.params.item.nome);    
-    const [email, setEmail] = useState(route.params.item.email);
+export default function EditaPerfil({ navigation, route, atCadastro }) {
+    const id = route.params.info.id
+    const [nome, setNome] = useState(route.params.info.nome);    
+    const [email, setEmail] = useState(route.params.info.email);
     const info = {id, nome, email}   
     const at = true;
-    const funcao = route.params.atCadastro
-    console.log(funcao)
-    console.log(route.params.item)
+
+    console.log(info)
 
     async function attCadastro() {  
         let alterou = false;
@@ -28,10 +27,8 @@ export default function EditaPerfil({ navigation, route }) {
         }
     
         if (alterou) {
-            navigation.navigate('Tab', {items});
-            useEffect(() => {
-                funcao();
-            }, []);
+
+            navigation.navigate('Tab', {info});
           
         } else {
             alert('Falha no cadastro');

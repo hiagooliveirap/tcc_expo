@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     txtNomeHorizontal: {
-        marginBottom: 15,
+        marginBottom: 3,
         fontSize: 18,
         fontWeight: "bold",
         maxWidth: 210,
@@ -201,6 +201,12 @@ const styles = StyleSheet.create({
     txtValorHorizontal: {
         color: '#FFA500',
         fontWeight: "600",
+        fontSize:17
+    },
+    TextCategoria: {
+        marginBottom:3,
+        color: '#808080',
+        fontSize: 17        
     },
 });
 
