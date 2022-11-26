@@ -18,8 +18,12 @@ export default function CardItemFavoritos({item, navigation, listaFavorito}) {
         
             
     }
+    const id = item.usu_id
+    const pro_id = item.pro_id
+    //console.log(item)
+
     return(
-        <TouchableOpacity style={styles.containerHorizontal} onPress={() => navigation.navigate('ItemProduto', {item})}>
+        <TouchableOpacity style={styles.containerHorizontal} onPress={() => navigation.navigate('ItemProduto', {item, id, pro_id})}>
            
                 <Image style={styles.imgHorizontal} source={{uri: item.proImagem}}/>                                
                 <View style={styles.containerValorHorizontal}>           

@@ -166,7 +166,7 @@ export default function Main({ navigation, route  }) {
                         /> */}
                             <FlatList
                                 data={produtos2}
-                                renderItem={({ item }) => <New item={item} navigation={navigation} />}
+                                renderItem={({ item }) => <New item={item} navigation={navigation} id={id} />}
                                 keyExtractor={item => item.proId}
                                 numColumns={1}
                                 horizontal={true}
@@ -188,7 +188,7 @@ export default function Main({ navigation, route  }) {
                 <SafeAreaView>
                     <FlatList
                         data={produtos}
-                        renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} />}
+                        renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} id={id}  />}
                         keyExtractor={item => item.proId}
                         numColumns={1}
                         style={styles.flat}

@@ -5,9 +5,9 @@ import { Ionicons } from '@expo/vector-icons'
 import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 import { faBorderNone } from '@fortawesome/free-solid-svg-icons';
 
-export default function New({ item, navigation }) {
+export default function New({ item, navigation, id }) {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('ItemProduto', { item })} style={styles.container}>
+    <TouchableOpacity onPress={() => navigation.navigate('ItemProduto', { item, id })} style={styles.container}>
       <Image
         source={{uri: item.proImagem}}
         style={styles.cover}

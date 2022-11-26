@@ -14,7 +14,7 @@ import img5 from '../../assets/blog-2.jpg';
 import img6 from '../../assets/blog-3.jpg';
 
 
-export default function Produtos({ navigation }) {
+export default function Produtos({ navigation, route }) {
   const [tipoSel, setTipoSel] = useState([]);
 
   //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
@@ -27,8 +27,8 @@ export default function Produtos({ navigation }) {
       { id: 4, tipo: 'Porção' }
     ]
   );
-
   // produtos
+  const id = route.params.id
   const [produtos, setProdutos] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -101,7 +101,7 @@ export default function Produtos({ navigation }) {
       <SafeAreaView>
         <FlatList
           data={produtos}
-          renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} />}
+          renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} id={id} />}
           keyExtractor={item => item.proId}
           //numColumns={numColumns} 
           style={styles.flat}

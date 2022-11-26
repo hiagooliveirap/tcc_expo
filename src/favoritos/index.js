@@ -17,7 +17,9 @@ export default function Favoritos({navigation, route}) {
     );
 
     // produtos
+    //const usuId = route.params.info.id;
     const [produtos, setProdutos] = useState([])
+    const [qtdFav, setQtdFav] = useState(true);
 
         //const id = route.params.info.id
         const id = route.params.id
@@ -25,6 +27,7 @@ export default function Favoritos({navigation, route}) {
         async function listaFavorito() {
             try {
               const response = await api.get('favoritos/' + id);
+              setQtdFav(response.data.nResults == 0 ? true : false)
               setProdutos(response.data.message);
             } catch (e) {
               setProdutos([]);
@@ -33,8 +36,10 @@ export default function Favoritos({navigation, route}) {
           }
         
           useEffect(() => {
-            listaFavorito();
-          }, [])
+            const atualiza = navigation.addListener('focus', ()=> {
+              listaFavorito();
+            })
+          }, [navigation])
 
     return(
         <View style={styles.container}>
@@ -42,9 +47,15 @@ export default function Favoritos({navigation, route}) {
                 <Text style={styles.text_header}>Meus favoritos</Text>
             </View>
 
+            {
+              qtdFav === true
+              ?
+              <Text>Você não tem Favoritos</Text>
+              :
+            
             <FlatList
                     data={produtos}
-                    renderItem={({ item }) => <CardItemFavoritos item={item} navigation={navigation} listaFavorito = {listaFavorito} />}
+                    renderItem={({ item }) => <CardItemFavoritos item={item} navigation={navigation} listaFavorito={listaFavorito} id={id} />}
                     keyExtractor={item => item.usu_id}
                     numColumns={1}
                     style={styles.flat}
@@ -53,6 +64,7 @@ export default function Favoritos({navigation, route}) {
                     disableScrollViewPanResponder={true}
                     nestedScrollEnabled={false}
                 />
+              }
         </View>
     )
 }
