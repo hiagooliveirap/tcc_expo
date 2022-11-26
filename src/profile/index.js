@@ -29,19 +29,18 @@ export default function Perfil({ navigation, route }) {
         } catch (err) {
             console.log('Erro: ' + err);
             return false;
-        } finally{
-            useEffect(() => {
+        }
+    }
+            // if (!alterou) {
+            //     alert('Falha na atualização');
+            // }
+        
+      //}
+                  useEffect(() => {
                 const atualiza = navigation.addListener('focus', ()=> {
                     atCadastro();
                 })
               }, [navigation])
-        }
-        
-            if (!alterou) {
-                alert('Falha na atualização');
-            }
-        
-      }
 
 
     return (

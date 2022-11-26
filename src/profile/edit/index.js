@@ -28,7 +28,7 @@ export default function EditaPerfil({ navigation, route, atCadastro }) {
     
         if (alterou) {
 
-            navigation.navigate('Tab', {info});
+            navigation.goBack({info});
           
         } else {
             alert('Falha no cadastro');

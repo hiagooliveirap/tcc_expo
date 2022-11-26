@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     TextCategoria: {
         marginBottom:3,
         color: '#808080',
-        fontSize: 17        
+        fontSize: 15        
     },
 });
 

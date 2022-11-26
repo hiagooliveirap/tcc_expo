@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Foto from '../../assets/blog-3.jpg';
 import iconeVoltar from '../../assets/arrow.png';
 import iconeAddFav from '../../assets/love.png';
-import iconeAvatar from '../../assets/avatar.png';
+import iconeAvatar from '../../assets/loveBorda.png';
 import api from '../services/api';
 
 export default function ItemProduto({ route, navigation}) {

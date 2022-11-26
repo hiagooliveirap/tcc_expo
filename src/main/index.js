@@ -20,7 +20,7 @@ export default function Main({ navigation, route  }) {
     //const [nome, setNome] = useState(route.params.name);
     // const receba = route.params.item;
     
-    const nome = route.params.nome
+    const [nome, setNome] = useState(route.params.nome)
     const id = route.params.id
     const email = route.params.email
     const info = {id, nome, email}
@@ -48,11 +48,30 @@ export default function Main({ navigation, route  }) {
             console.log('ERRO: ' + e)
         }  
     }
+    async function attNome() {  
+        let alterou = false;
+        try {
+          
+          const response = await api.get('usuarios/' + id);
+          alterou = response.data.confirma;
+          setNome(response.data.message.usuNome); 
+        } catch (err) {
+            console.log('Erro: ' + err);
+            return false;
+        }
+    }
+
+
 
     useEffect(() => {
         listaAleatorio(),
         listaAleatorio2()
-    }, [])
+        const atualiza = navigation.addListener('focus', ()=> {
+
+            attNome()
+        })
+        }, [navigation])
+
      
 
     
@@ -80,6 +99,8 @@ export default function Main({ navigation, route  }) {
     if (!fontsLoaded) {
         return null;
     }
+
+
 
     // async function listaProduto(){
     //     try{
