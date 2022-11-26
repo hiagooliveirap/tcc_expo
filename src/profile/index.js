@@ -30,9 +30,11 @@ export default function Perfil({ navigation, route }) {
             console.log('Erro: ' + err);
             return false;
         } finally{
-            useEffect(() =>{
-                atCadastro()
-            }, [])
+            useEffect(() => {
+                const atualiza = navigation.addListener('focus', ()=> {
+                    atCadastro();
+                })
+              }, [navigation])
         }
         
             if (!alterou) {

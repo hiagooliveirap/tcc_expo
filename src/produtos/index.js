@@ -15,7 +15,8 @@ import img6 from '../../assets/blog-3.jpg';
 
 
 export default function Produtos({ navigation, route }) {
-  const [tipoSel, setTipoSel] = useState([]);
+  const [tipoSel, setTipoSel] = useState(0);
+  const [pesquisa, setPesquisa] = useState('')
 
   //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
   const [tipoProduto, setTipoProduto] = useState(
@@ -23,8 +24,8 @@ export default function Produtos({ navigation, route }) {
       { id: 0, tipo: 'Tudo' },
       { id: 1, tipo: 'Lanche' },
       { id: 2, tipo: 'Cachorro Quente' },
-      { id: 3, tipo: 'Pizza' },
-      { id: 4, tipo: 'Porção' }
+      { id: 3, tipo: 'Porção' },
+      { id: 4, tipo: 'Pizza' }
     ]
   );
   // produtos
@@ -35,11 +36,28 @@ export default function Produtos({ navigation, route }) {
   const limit = 10;
   const [loading, setLoading] = useState(false);
 
+  function filtraTipo(v){
+    setTipoSel(v)
+    listaProduto(v, pesquisa)
+    
+  }
+  function filtraNome(v){
+    setPesquisa(v)
+    listaProduto(tipoSel, v)
+    
+  }
 
-  async function listaProduto() {
+
+  async function listaProduto(tipo, nome) {
     try {
-      const response = await api.get('produtos', {
+      let dadosBusca = {
+        proNome: nome,
+        cat_Id: tipo
+      };
+
+      const response = await api.post('produtos', dadosBusca, {
         params: { page, limit }
+        
       });
       setProdutos(response.data.message);
     } catch (e) {
@@ -49,7 +67,7 @@ export default function Produtos({ navigation, route }) {
   }
 
   useEffect(() => {
-    listaProduto();
+    listaProduto(tipoSel, pesquisa);
   }, [])
 
 
@@ -65,6 +83,8 @@ export default function Produtos({ navigation, route }) {
             placeholder='O que deseja?'
             placeholderTextColor='#C5C5C6'
             underlineColorAndroid='transparent'
+            value={pesquisa}
+            onChangeText={nm => filtraNome(nm)}
           />
         </View>
 
@@ -79,7 +99,7 @@ export default function Produtos({ navigation, route }) {
         <Picker
           selectedValue={tipoSel}
           style={styles.itemOrdenar}
-          onValueChange={(itemValue) => setTipoSel(itemValue)}
+          onValueChange={(itemValue) => filtraTipo(itemValue)}
         >
             {tipoProduto.map(tp => {
               return <Picker.Item label={tp.tipo} value={tp.id} key={tp.id} />
