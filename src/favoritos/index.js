@@ -5,6 +5,7 @@ import api from '../services/api';
 import img1 from '../../assets/product-7.jpg';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
 import CardItemFavoritos from './card_item_favoritos';
+import ImgNoResults from '../../assets/no-results-found.png';
 
 export default function Favoritos({navigation, route}) {
     const [tipoProduto, setTipoProduto] = useState(
@@ -43,14 +44,18 @@ export default function Favoritos({navigation, route}) {
 
     return(
         <View style={styles.container}>
-            <View style={styles.header}>
+            <View style={styles.header}>                
                 <Text style={styles.text_header}>Meus favoritos</Text>
             </View>
 
             {
               qtdFav === true
               ?
-              <Text>Você não tem Favoritos</Text>
+              <View style={{ alignItems: 'center'}}>
+                <Image source={ImgNoResults} style={{ height: 400, width: 400}} />
+                <Text style={{ fontWeight: "bold",fontSize: 26, marginBottom: 12 }}>Ops!</Text>
+                <Text>Você não possui favorito(s)</Text>
+              </View>
               :
             
             <FlatList

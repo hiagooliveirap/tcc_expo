@@ -137,7 +137,8 @@ export default function Main({ navigation, route  }) {
                             style={styles.inputBusca}
                             placeholder='O que deseja?'
                             placeholderTextColor='#C5C5C6'
-                            underlineColorAndroid='transparent'
+                            underlineColorAndroid='transparent'                            
+                            onPressIn={() => navigation.navigate('Buscar')}
                         />
                     </View>
                 </View>

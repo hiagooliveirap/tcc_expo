@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
     flat: {
         marginTop: 20,
-        marginBottom: Dimensions.get('window').height / 5,
+        marginBottom: Dimensions.get('window').height / 3.5,
     },
     containerInput: {
         margin: 10,

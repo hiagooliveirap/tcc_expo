@@ -1,22 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Text, View, TextInput, TouchableOpacity, SafeAreaView, FlatList } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, SafeAreaView, FlatList, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import CardItem from './card_item';
 import CardItemHorizontal from './card_item_horizontal';
 import api from '../services/api';
-
-import img1 from '../../assets/product-7.jpg';
-import img3 from '../../assets/product-1.png';
-import img4 from '../../assets/burguer-2.jpg';
-import img5 from '../../assets/blog-2.jpg';
-import img6 from '../../assets/blog-3.jpg';
+import ImgNoResults from '../../assets/no-results-found.png';
 
 
 export default function Produtos({ navigation, route }) {
   const [tipoSel, setTipoSel] = useState(0);
-  const [pesquisa, setPesquisa] = useState('')
+  const [pesquisa, setPesquisa] = useState('');
+  const [qtdFav, setQtdFav] = useState(true);
 
   //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
   const [tipoProduto, setTipoProduto] = useState(
@@ -60,6 +55,7 @@ export default function Produtos({ navigation, route }) {
         
       });
       setProdutos(response.data.message);
+      setQtdFav(response.data.nResults == 0 ? true : false);
     } catch (e) {
       setProdutos([]);
       console.log('erro' + e)
@@ -117,8 +113,17 @@ export default function Produtos({ navigation, route }) {
           <Text style={styles.textFiltros}>Ordenar</Text>
         </TouchableOpacity> */}
       </View>        
+      {
+        qtdFav === true
+        ?
+        <View style={{ alignItems: 'center'}}>
+          <Image source={ImgNoResults} style={{ height: 300, width: 300}} />
+          <Text style={{ fontWeight: "bold",fontSize: 26, marginBottom: 12 }}>Ops!</Text>
+          <Text>Infelizmente não encontramos nenhum prato</Text>
+        </View>
+        :
 
-      <SafeAreaView>
+        <SafeAreaView>
         <FlatList
           data={produtos}
           renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} id={id} />}
@@ -130,6 +135,7 @@ export default function Produtos({ navigation, route }) {
           disableScrollViewPanResponder={true}
         />
       </SafeAreaView>
+      }      
     </View>
   );
 }
