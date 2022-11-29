@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, Image, TextInput, KeyboardAvoidingView } 
 import styles from '../edit/styles';
 import api from '../../services/api';
 
-export default function EditaPerfil({ navigation, route, atCadastro }) {
+export default function EditaPerfil({ navigation, route }) {
     const id = route.params.info.id
     const [nome, setNome] = useState(route.params.info.nome);    
     const [email, setEmail] = useState(route.params.info.email);

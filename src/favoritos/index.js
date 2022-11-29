@@ -52,7 +52,7 @@ export default function Favoritos({navigation, route}) {
               qtdFav === true
               ?
               <View style={{ alignItems: 'center'}}>
-                <Image source={ImgNoResults} style={{ height: 400, width: 400}} />
+                <Image source={ImgNoResults} style={{ height: '70%', width: '60%'}} />
                 <Text style={{ fontWeight: "bold",fontSize: 26, marginBottom: 12 }}>Ops!</Text>
                 <Text>Você não possui favorito(s)</Text>
               </View>
@@ -61,7 +61,7 @@ export default function Favoritos({navigation, route}) {
             <FlatList
                     data={produtos}
                     renderItem={({ item }) => <CardItemFavoritos item={item} navigation={navigation} listaFavorito={listaFavorito} id={id} />}
-                    keyExtractor={item => item.usu_id}
+                    keyExtractor={item => item.usu_id + item.pro_id}
                     numColumns={1}
                     style={styles.flat}
                     showsVerticalScrollIndicator={false}

@@ -41,7 +41,7 @@ export default function Login({ navigation }) {
                 // console.log(info);
                 navigation.navigate('Tab', {info});
             } else {
-                alert('Senha incorreta');
+                alert('Usuário e/ou Senha incorretos');
             }
         }
 

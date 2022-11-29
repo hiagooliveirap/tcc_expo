@@ -53,7 +53,7 @@ export default function Perfil({ navigation, route }) {
 
                     <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFF' }}>Perfil</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {info, atCadastro: atCadastro})}>
+                    <TouchableOpacity onPress={() => navigation.navigate('EditPerfil', {info})}>
                         <Image source={require('../../assets/edit-button-white.png')} />
                     </TouchableOpacity>
                 </View>
@@ -68,7 +68,7 @@ export default function Perfil({ navigation, route }) {
                 </View>
             </View>
             
-            <TouchableOpacity style={styles.containerFooter}>
+            <TouchableOpacity style={styles.containerFooter} onPress={() => navigation.navigate('Login')}>
                 <Text style={{ color: '#FF0000', fontSize: 15, fontWeight: 'bold'}}>Sair</Text>
             </TouchableOpacity>
         </View>

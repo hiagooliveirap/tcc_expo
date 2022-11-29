@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import { Text, View, ImageBackground, Image, TouchableOpacity, Touchable, ScrollView, Linking  } from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -7,16 +7,23 @@ import Foto from '../../assets/blog-3.jpg';
 import iconeVoltar from '../../assets/arrow.png';
 import iconeAddFav from '../../assets/love.png';
 import iconeAvatar from '../../assets/loveBorda.png';
+import { Modalize } from 'react-native-modalize';
 import api from '../services/api';
 
 export default function ItemProduto({ route, navigation}) {
+    const modalizeRef = useRef(null);
     const zap = 'https://wa.me/55' + route.params.item.estWhatsapp
+
+    function onOpen() {
+        modalizeRef.current?.open();
+    };
 
     
     const usuId = route.params.id;
     const proId = route.params.item.proId 
     const pro_id = route.params.pro_id
     const produto = proId ? proId : pro_id
+    const chave = usuId + '/' + produto
 
     //console.log(usuId + ' XXXXXXXXXXXXXXXX ' + proId + ' XXXXXXXXXXXXXXXXXXXXX ' + pro_id)
     console.log(produto)
@@ -46,7 +53,7 @@ export default function ItemProduto({ route, navigation}) {
 
       async function deletaFavorito(){ 
             try {              
-            const response = await api.delete('favoritos/' + usuId + '/' + produto);
+            const response = await api.delete('favoritos/' + chave);
             const apagou = response.data.confirma;
             setFav(false);
             } catch (err) {
@@ -109,11 +116,20 @@ export default function ItemProduto({ route, navigation}) {
                 </View>
             </ScrollView>
 
-
-            <TouchableOpacity style={styles.containerFooter} onPress={() => Linking.openURL(zap)}>
+            {/* <TouchableOpacity style={styles.containerFooter} onPress={() => Linking.openURL(zap)}> */}
+            <TouchableOpacity style={styles.containerFooter} onPress={onOpen}>
                 <Image source={require('../../assets/whatsapp.png')} style={{ marginRight: 15}}/>
                 <Text style={{ color: '#FFF', fontSize: 15, fontWeight: 'bold' }}>Pedir pelo Whatsapp</Text>
             </TouchableOpacity>
+            <Modalize
+            ref={modalizeRef}
+            snapPoint={180}
+            modalHeight={500}
+            >
+                <View>
+                    <Text>Texto teste</Text>
+                </View>
+            </Modalize>            
         </View>
     );
 }

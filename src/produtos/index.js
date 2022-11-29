@@ -5,7 +5,7 @@ import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CardItemHorizontal from './card_item_horizontal';
 import api from '../services/api';
-import ImgNoResults from '../../assets/no-results-found.png';
+import ImgNoResults from '../../assets/no-results-found-product.png';
 
 
 export default function Produtos({ navigation, route }) {
@@ -116,8 +116,8 @@ export default function Produtos({ navigation, route }) {
       {
         qtdFav === true
         ?
-        <View style={{ alignItems: 'center'}}>
-          <Image source={ImgNoResults} style={{ height: 300, width: 300}} />
+        <View style={{ alignItems: 'center', marginTop: 20}}>
+          <Image source={ImgNoResults} style={{ height: '60%', width: '60%'}} />
           <Text style={{ fontWeight: "bold",fontSize: 26, marginBottom: 12 }}>Ops!</Text>
           <Text>Infelizmente não encontramos nenhum prato</Text>
         </View>
