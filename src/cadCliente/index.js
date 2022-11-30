@@ -6,6 +6,7 @@ import api from '../services/api.js';
 
 export default function CadCliente({ navigation }) {
 
+    /* Animação da tela de login */    
     const [logo] = useState(new Animated.ValueXY({ x: 215, y: 60 }));
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }));
     const [opacity] = useState(new Animated.Value(0));
@@ -28,6 +29,7 @@ export default function CadCliente({ navigation }) {
         ]).start();
     }, []);
 
+    /* Função que tem a responsabilidade de cadastrar um usuário no banco de dados */
     async function verCadastro() {  
         let logou = false;
         try {
@@ -50,12 +52,13 @@ export default function CadCliente({ navigation }) {
           alert('Falha no cadastro');
         }
         
-      }
-
-        const [nome, setNome] = useState(''); 
-        const [senha, setSenha] = useState(''); 
-        const [email, setEmail] = useState(''); 
-        const [documento, setDocumento] = useState(''); 
+    }
+ 
+    /* Criando os controladores de estado */
+    const [nome, setNome]           = useState(''); 
+    const [senha, setSenha]         = useState(''); 
+    const [email, setEmail]         = useState(''); 
+    const [documento, setDocumento] = useState(''); 
 
 
     return (

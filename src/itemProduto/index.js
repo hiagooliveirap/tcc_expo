@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef  } from 'react';
-import { Text, View, ImageBackground, Image, TouchableOpacity, Touchable, ScrollView, Linking  } from 'react-native';
+import { Text, View, ImageBackground, Image, TouchableOpacity, ScrollView, Linking  } from 'react-native';
 import styles from './styles';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Foto from '../../assets/blog-3.jpg';
 import iconeVoltar from '../../assets/arrow.png';
 import iconeAddFav from '../../assets/love.png';
 import iconeAvatar from '../../assets/loveBorda.png';

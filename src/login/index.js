@@ -4,21 +4,22 @@ import styles from './styles';
 import api from '../services/api.js'
 
 export default function Login({ navigation }) {
-
-    const [offset] = useState(new Animated.ValueXY({ x: 0, y: 95 }));
+    /* Animação */
+    const [offset]  = useState(new Animated.ValueXY({ x: 0, y: 95 }));
     const [opacity] = useState(new Animated.Value(0));
 
+    /* Criando controladores de estado */
     const [login, setLogin] = useState('fulano@yahoo.com');
     const [senha, setSenha] = useState('12345');
 
 
-    
+    /* Função que é responsável por validar o login */
     async function verLogin() {
         let logou = false;
-        let nome = '';
-        let id = '';
+        let nome  = '';
+        let id    = '';
         let email = '';
-        let info = {}
+        let info  = {};
 
         try {
             let dadosUsu = {
@@ -28,42 +29,37 @@ export default function Login({ navigation }) {
 
             const response = await api.post('usuarios/login', dadosUsu);
             logou = response.data.confirma;
-            nome = response.data.nome;
-            id = response.data.Id;
+            nome  = response.data.nome;
+            id    = response.data.Id;
             email = response.data.email;
-            info = {id, nome, email};
+            info  = {id, nome, email};
             
             
         } catch (err) {
             console.log('Erro: ' + err);
         } finally{
-            if (logou) {
-                // console.log(info);
+            if (logou) {                
                 navigation.navigate('Tab', {info});
             } else {
                 alert('Usuário e/ou Senha incorretos');
             }
         }
-
-
     }
 
+    /* Componente que renderiza e atualiza a página */
     useEffect(() => {
-
-
         Animated.parallel([
             Animated.spring(offset.y, {
                 toValue: 0,
                 speed: 6,
                 bounciness: 25,
                 useNativeDriver: true,
-
             }),
+            
             Animated.timing(opacity, {
                 toValue: 1,
                 duration: 500,
                 useNativeDriver: true,
-
             })
         ]).start();
     }, []);

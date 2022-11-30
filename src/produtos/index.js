@@ -9,11 +9,10 @@ import ImgNoResults from '../../assets/no-results-found-product.png';
 
 
 export default function Produtos({ navigation, route }) {
-  const [tipoSel, setTipoSel] = useState(0);
-  const [pesquisa, setPesquisa] = useState('');
-  const [qtdFav, setQtdFav] = useState(true);
-
-  //const [tipoProduto, setTipoProduto] = useState(['Tipo', 'Lanche', 'Porção', 'Suco']); 
+  /* Criando os controladores de estados */
+  const [tipoSel, setTipoSel]         = useState(0);
+  const [pesquisa, setPesquisa]       = useState('');
+  const [qtdFav, setQtdFav]           = useState(true);
   const [tipoProduto, setTipoProduto] = useState(
     [
       { id: 0, tipo: 'Tudo' },
@@ -23,12 +22,12 @@ export default function Produtos({ navigation, route }) {
       { id: 4, tipo: 'Pizza' }
     ]
   );
-  // produtos
-  const id = route.params.id
+  /* Parametros dos produtos */
+  const id                      = route.params.id
   const [produtos, setProdutos] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [page, setPage] = useState(1);
-  const limit = 10;
+  const [total, setTotal]       = useState(0);
+  const [page, setPage]         = useState(1);
+  const limit                   = 10;
   const [loading, setLoading] = useState(false);
 
   function filtraTipo(v){

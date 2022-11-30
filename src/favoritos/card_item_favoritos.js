@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TouchableOpacity, View, Image, Text } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import lixeira from '../../assets/icon/delete.png'
 import api from '../services/api'
@@ -14,13 +13,11 @@ export default function CardItemFavoritos({item, navigation, listaFavorito}) {
               listaFavorito(); 
             } catch (err) {
                 console.log('Erro: ' + err);
-            }
-        
-            
+            }                    
     }
-    const id = item.usu_id
-    const pro_id = item.pro_id
-    //console.log(item)
+
+    const id     = item.usu_id;
+    const pro_id = item.pro_id;    
 
     return(
         <TouchableOpacity style={styles.containerHorizontal} onPress={() => navigation.navigate('ItemProduto', {item, id, pro_id})}>
@@ -32,7 +29,7 @@ export default function CardItemFavoritos({item, navigation, listaFavorito}) {
                     <Text style={styles.txtValorHorizontal}>R$ {item.proPreco}</Text>           
                 </View>
                 <TouchableOpacity onPress={() =>{deletaFavorito(item.usu_id, item.pro_id)}}>
-                        <Image source={lixeira} style={styles.deletar} /> 
+                    <Image source={lixeira} style={styles.deletar} /> 
                 </TouchableOpacity>     
         </TouchableOpacity>        
     )
