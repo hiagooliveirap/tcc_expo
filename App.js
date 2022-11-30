@@ -1,10 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/login';
 import Constants from 'expo-constants';
 
 import Rotas from './src/rotas/rotas';
-// import Teste from './src/cadCliente';
 
 export default function App() {
 

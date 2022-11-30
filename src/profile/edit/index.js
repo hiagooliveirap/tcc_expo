@@ -1,17 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Text, View, TouchableOpacity, Image, TextInput, KeyboardAvoidingView } from 'react-native';
 import styles from '../edit/styles';
 import api from '../../services/api';
 
 export default function EditaPerfil({ navigation, route }) {
+    /* Armazenando o código do usuário logado */
     const id = route.params.info.id
-    const [nome, setNome] = useState(route.params.info.nome);    
+
+    /* Criando um controlador de estados */
+    const [nome, setNome]   = useState(route.params.info.nome);    
     const [email, setEmail] = useState(route.params.info.email);
-    const info = {id, nome, email}   
-    const at = true;
+    const info = {id, nome, email}      
 
-    console.log(info)
-
+    /* Função responsável por atualizar o nome do usuário */
     async function attCadastro() {  
         let alterou = false;
         try {
@@ -27,16 +28,12 @@ export default function EditaPerfil({ navigation, route }) {
         }
     
         if (alterou) {
-
-            navigation.goBack({info});
-          
+            navigation.goBack({info});          
         } else {
             alert('Falha no cadastro');
         }
         
-      }
-
-
+    }
 
     return (
         <View style={styles.container}>
@@ -71,7 +68,6 @@ export default function EditaPerfil({ navigation, route }) {
             <TouchableOpacity style={styles.btn_salvar} onPress={() => attCadastro()}>
                 <Text style={styles.text_btn_salvar}>Salvar</Text>
             </TouchableOpacity>
-
         </View>
     )
 }

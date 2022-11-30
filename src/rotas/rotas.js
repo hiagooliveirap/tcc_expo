@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { TouchableOpacity } from 'react-native';
-import { Feather } from '@expo/vector-icons';
-
 import { StatusBar } from 'expo-status-bar';
-
 import Login from '../login';
 import Tab from '../rotas/rotasTab';
 import CadastroUsuario from '../cadCliente';

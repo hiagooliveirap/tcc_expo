@@ -30,18 +30,19 @@ export default function Produtos({ navigation, route }) {
   const limit                   = 10;
   const [loading, setLoading] = useState(false);
 
+  /* Função responsável de filtrar por categoria */
   function filtraTipo(v){
-    setTipoSel(v)
-    listaProduto(v, pesquisa)
-    
+    setTipoSel(v);
+    listaProduto(v, pesquisa);    
   }
+
+  /* Função responsável de filtrar por nome do produto */
   function filtraNome(v){
-    setPesquisa(v)
-    listaProduto(tipoSel, v)
-    
+    setPesquisa(v);
+    listaProduto(tipoSel, v);    
   }
 
-
+/* Função responsável por listar os produtos */
   async function listaProduto(tipo, nome) {
     try {
       let dadosBusca = {
@@ -60,16 +61,14 @@ export default function Produtos({ navigation, route }) {
       console.log('erro' + e)
     }
   }
-
+ 
+  /* Componente que renderiza e atualiza a página */
   useEffect(() => {
     listaProduto(tipoSel, pesquisa);
   }, [])
 
-
-  //const numColumns = 2;
   return (
     <View style={styles.container}>
-
       <View style={styles.background}>
         <View style={styles.containerInput}>
           <Ionicons name='search-outline' size={20} color='#C5C5C6' />
@@ -90,27 +89,17 @@ export default function Produtos({ navigation, route }) {
       </View>
 
       <View style={styles.containerFiltros}>
-      <TouchableOpacity style={styles.itemFiltrosSelecionado}>
-        <Picker
-          selectedValue={tipoSel}
-          style={styles.itemOrdenar}
-          onValueChange={(itemValue) => filtraTipo(itemValue)}
-        >
+        <TouchableOpacity style={styles.itemFiltrosSelecionado}>
+          <Picker
+            selectedValue={tipoSel}
+            style={styles.itemOrdenar}
+            onValueChange={(itemValue) => filtraTipo(itemValue)}
+          >
             {tipoProduto.map(tp => {
               return <Picker.Item label={tp.tipo} value={tp.id} key={tp.id} />
             })}
-        </Picker>
-        </TouchableOpacity>
-
-        {/* <TouchableOpacity style={styles.itemFiltrosSelecionado}>
-          <Ionicons name='options-outline' size={14} color='#FFF' style={{ marginLeft: 5 }} />
-          <Text style={styles.textFiltrosSelecionado}>Filtrar</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.itemOrdenar}>
-          <Ionicons name='filter-outline' size={14} color='#FFA500' style={{ marginLeft: 5 }} />
-          <Text style={styles.textFiltros}>Ordenar</Text>
-        </TouchableOpacity> */}
+          </Picker>
+        </TouchableOpacity>        
       </View>        
       {
         qtdFav === true
@@ -118,22 +107,21 @@ export default function Produtos({ navigation, route }) {
         <View style={{ alignItems: 'center', marginTop: 20}}>
           <Image source={ImgNoResults} style={{ height: '60%', width: '60%'}} />
           <Text style={{ fontWeight: "bold",fontSize: 26, marginBottom: 12 }}>Ops!</Text>
-          <Text>Infelizmente não encontramos nenhum prato</Text>
+          <Text>Infelizmente não encontramos nenhum produto</Text>
         </View>
         :
 
         <SafeAreaView>
-        <FlatList
-          data={produtos}
-          renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} id={id} />}
-          keyExtractor={item => item.proId}
-          //numColumns={numColumns} 
-          style={styles.flat}
-          showsVerticalScrollIndicator={false}
-          showsHorizontalScrollIndicator={false}
-          disableScrollViewPanResponder={true}
-        />
-      </SafeAreaView>
+          <FlatList
+            data={produtos}
+            renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} id={id} />}
+            keyExtractor={item => item.proId}          
+            style={styles.flat}
+            showsVerticalScrollIndicator={false}
+            showsHorizontalScrollIndicator={false}
+            disableScrollViewPanResponder={true}
+          />
+        </SafeAreaView>
       }      
     </View>
   );
