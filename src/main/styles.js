@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     foto: {
         marginBottom: 12,
-        backgroundColor: '#000',
+
         height: 40,
         width: 40,
         borderRadius: 100,

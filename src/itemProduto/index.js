@@ -1,15 +1,77 @@
 import React, { useState, useEffect, useRef  } from 'react';
-import { Text, View, ImageBackground, Image, TouchableOpacity, ScrollView, Linking  } from 'react-native';
+import { Text, View, ImageBackground, Image, TouchableOpacity, Linking, SafeAreaView  } from 'react-native';
 import styles from './styles';
 import iconeVoltar from '../../assets/arrow.png';
 import iconeAddFav from '../../assets/love.png';
 import iconeAvatar from '../../assets/loveBorda.png';
 import { Modalize } from 'react-native-modalize';
+import closeModalImg from '../../assets/x.png';
+import IfoodImg from '../../assets/ifood777.png';
+import deliveryImg from '../../assets/DeliveryMuch.png';
+import aiqfomeImg from '../../assets/aiqfome3.png';
+import chamar from '../../assets/fone.png';
+import whatsappImg from '../../assets/whatsapp.png';
 import api from '../services/api';
 
 export default function ItemProduto({ route, navigation}) {
     const modalizeRef = useRef(null);
-    const zap = 'https://wa.me/55' + route.params.item.estWhatsapp
+    let zap = route.params.item.estWhatsapp;
+    if(zap !== null){
+        zap = 'https://wa.me/55' + route.params.item.estWhatsapp;
+    } else{
+        zap = null
+    }
+    const aiqfome = route.params.item.lnk_aiqfome;
+    const ifood = route.params.item.lnk_ifood;
+    const much = route.params.item.lnk_much;
+
+    let linkZap = ''
+    let linkFome = ''
+    let linkIfood = ''
+    let linkMuch = ''
+    
+    
+    if(zap !== null){
+        linkZap = <TouchableOpacity style={styles.zap} onPress={() => Linking.openURL(zap)}>
+                    <Image source={whatsappImg} style={{ marginRight: 15, height: 24, width: 24}}/>
+                    <Text style={{ color: '#FFF', fontSize: 18, fontWeight: 'bold' }}>Pedir pelo WhatsApp</Text>
+                </TouchableOpacity>
+
+    } else{
+        linkZap = <View></View>
+    }
+
+    if(aiqfome !== null){
+        linkFome = <TouchableOpacity style={styles.aiqfome} onPress={() => Linking.openURL(aiqfome)}>
+                    <Image source={aiqfomeImg} style={{ marginRight: 15, height: 24, width: 24}}/>
+                    <Text style={{ color: '#FFF', fontSize: 18, fontWeight: 'bold' }}>Pedir pelo Aiqfome</Text>
+                </TouchableOpacity>
+
+    } else{
+        linkFome = <View></View>
+    }
+
+    if(ifood !== null){
+        linkIfood = <TouchableOpacity style={styles.ifood} onPress={() => Linking.openURL(ifood)}>
+                    <Image source={IfoodImg} style={{ marginRight: 15, height: 24, width: 24}}/>
+                    <Text style={{ color: '#FFF', fontSize: 18, fontWeight: 'bold' }}>Pedir pelo Ifood</Text>
+                </TouchableOpacity>
+
+    } else{
+        linkIfood = <View></View>
+    }
+
+    if(much !== null){
+        linkMuch = <TouchableOpacity style={styles.deliveryMuch} onPress={() => Linking.openURL(much)}>
+                    <Image source={deliveryImg} style={{ marginRight: 15, height: 24, width: 24}}/>
+                    <Text style={{ color: '#FFF', fontSize: 18, fontWeight: 'bold' }}>Pedir pelo Delivery Much</Text>
+                </TouchableOpacity>
+
+    } else{
+        linkMuch = <View></View>
+    }
+
+
 
     function onOpen() {
         modalizeRef.current?.open();
@@ -82,7 +144,7 @@ export default function ItemProduto({ route, navigation}) {
       }, [])
 
     return (        
-        <View style={styles.container}>            
+        <SafeAreaView style={styles.container}>            
             <View style={styles.containerHeader}>
                 <ImageBackground source={{uri: route.params.item.proImagem}} style={styles.imgPrincipal}>
                     <View style={styles.containerHeaderBotoes}>
@@ -97,7 +159,7 @@ export default function ItemProduto({ route, navigation}) {
                 </ImageBackground>
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <View>
                 <View style={styles.containerBody}>
                     <Text style={styles.TextCategoria}>{route.params.item.estNome}</Text>
                     <View style={styles.containerTituloPreco}>
@@ -111,22 +173,39 @@ export default function ItemProduto({ route, navigation}) {
 
                     <Text style={styles.TextDescricao}>{route.params.item.proDescricao}</Text>
                 </View>
-            </ScrollView>
+            </View>
 
             {/* <TouchableOpacity style={styles.containerFooter} onPress={() => Linking.openURL(zap)}> */}
             <TouchableOpacity style={styles.containerFooter} onPress={onOpen}>
-                <Image source={require('../../assets/whatsapp.png')} style={{ marginRight: 15}}/>
-                <Text style={{ color: '#FFF', fontSize: 15, fontWeight: 'bold' }}>Pedir pelo Whatsapp</Text>
+                <Image source={chamar} style={{ marginRight: 15}}/>
+                <Text style={{ color: '#FFF', fontSize: 17, fontWeight: 'bold' }}>Faça seu pedido!</Text>
             </TouchableOpacity>
             <Modalize
             ref={modalizeRef}
-            snapPoint={180}
+            snapPoint={380}
             modalHeight={500}
             >
-                <View>
-                    <Text>Texto teste</Text>
+                <View style={{ width: '100%', height: '100%'}}>
+                    <View style={styles.headerModal}>
+                        <Text style={styles.textModalTitle}>Peça já o seu!</Text>
+                        {/* <TouchableOpacity>
+                            <Image source={closeModalImg} style={{ height: 16, width: 16, alignSelf: 'flex-end' }} />
+                        </TouchableOpacity> */}
+                    </View>
+
+                    {/* Zap */}
+                    {linkZap}
+
+                    {/* AiqFome */}
+                    {linkFome}
+
+                    {/* Ifood */}            
+                    {linkIfood}
+
+                    {/* Delivery Much */}            
+                    {linkMuch}
                 </View>
             </Modalize>            
-        </View>
+        </SafeAreaView>
     );
 }

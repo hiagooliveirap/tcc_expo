@@ -4,6 +4,7 @@ import { useFonts, Poppins_400Regular, Poppins_600SemiBold, Poppins_500Medium } 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import CardItemHorizontal from '../produtos/card_item_horizontal';
+import user from '../../assets/user1.png'
 
 import SwiperComponent from './components/swiper.js';
 import New from '../main/components/New';
@@ -77,7 +78,7 @@ export default function Main({ navigation, route  }) {
     }
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
 
                 <View style={styles.background}>
@@ -85,8 +86,8 @@ export default function Main({ navigation, route  }) {
                     <View style={styles.containerFoto}>
                         <Text numberOfLines={1} ellipsizeMode='tail' style={styles.nome_usuario}>{nome}</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('Perfil', {info})}>
-                            <View style={styles.foto}>
-                            </View>
+                            <Image style={styles.foto} source={user} />
+                            
                         </TouchableOpacity>
                     </View>
                     <View style={styles.containerInput}>
@@ -153,6 +154,6 @@ export default function Main({ navigation, route  }) {
                     />
                 </SafeAreaView>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     );
 }

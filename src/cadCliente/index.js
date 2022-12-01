@@ -1,4 +1,4 @@
-import { Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Animated } from 'react-native';
+import { Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Animated, ScrollView } from 'react-native';
 
 import styles from './styles';
 import { useState, useEffect} from 'react';
@@ -62,14 +62,14 @@ export default function CadCliente({ navigation }) {
 
 
     return (
-        <KeyboardAvoidingView style={styles.background}>
-            <View style={styles.containerLogo}>
-                <Animated.Image style={{
-                    width: logo.x,
-                    height: logo.y,}}
-                 source={require('../../assets/Logo.png')} />
-            </View>
-
+        <View style={styles.background}>
+            
+                <View style={styles.containerLogo}>
+                    <Animated.Image style={{
+                        width: logo.x,
+                        height: logo.y,}}
+                    source={require('../../assets/Logo.png')} />
+                </View>
             <View style={styles.container}>
                 <TextInput style={styles.input} placeholder='Nome'
                     autoCorrect={false}
@@ -93,6 +93,6 @@ export default function CadCliente({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-        </KeyboardAvoidingView>
+        </View>
     );
 }

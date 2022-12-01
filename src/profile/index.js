@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image, SafeAreaView } from 'react-native';
 import styles from './styles';
+import user from '../../assets/user1.png'
 import api from '../services/api';
 
 export default function Perfil({ navigation, route }) {    
@@ -37,7 +38,7 @@ export default function Perfil({ navigation, route }) {
 
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.background02}>
                 <View style={styles.header}>
                     <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -50,9 +51,8 @@ export default function Perfil({ navigation, route }) {
                         <Image source={require('../../assets/edit-button-white.png')} />
                     </TouchableOpacity>
                 </View>
-                <View style={styles.foto}>
-                </View>               
-
+                <Image style={styles.foto} source={user} />
+               
                 <View style={styles.info}>
                     <Text style={styles.nome_usuario}>{nome}</Text>
                     <Text style={styles.email_usuario}>{email}</Text>
@@ -62,6 +62,6 @@ export default function Perfil({ navigation, route }) {
             <TouchableOpacity style={styles.containerFooter} onPress={() => navigation.navigate('Login')}>
                 <Text style={{ color: '#FF0000', fontSize: 15, fontWeight: 'bold'}}>Sair</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     );        
 }

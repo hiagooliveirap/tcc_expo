@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Text, View, Image, FlatList } from 'react-native';
+import { Text, View, Image, FlatList, SafeAreaView } from 'react-native';
 import styles from './styles';
 import api from '../services/api';
 import CardItemFavoritos from './card_item_favoritos';
@@ -33,7 +33,7 @@ export default function Favoritos({navigation, route}) {
   }, [navigation])
 
   return(
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>                
         <Text style={styles.text_header}>Meus favoritos</Text>
       </View>
@@ -60,6 +60,6 @@ export default function Favoritos({navigation, route}) {
           nestedScrollEnabled={false}
         />
       }
-    </View>
+    </SafeAreaView>
   )
 }

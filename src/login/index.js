@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TouchableOpacity, KeyboardAvoidingView, Image, TextInput, Animated } from 'react-native';
+import { Text, View, TouchableOpacity, KeyboardAvoidingView, Image, TextInput, Animated, ScrollView } from 'react-native';
 import styles from './styles';
 import api from '../services/api.js'
 
@@ -66,37 +66,39 @@ export default function Login({ navigation }) {
 
 
     return (
-        <KeyboardAvoidingView style={styles.background}>
-            <View style={styles.containerLogo}>
-                <Image source={require('../../assets/Logo.png')} />
+        
+            <View style={styles.background}>
+
+                <Animated.View style={[
+                    styles.container, {
+                        opacity: opacity,
+                        transform: [
+                            { translateY: offset.y }
+                        ]
+                    }]}>
+                            <View style={styles.containerLogo}>
+                                <Image source={require('../../assets/Logo.png')} />
+                            </View>
+
+                    <TextInput style={styles.input} placeholder='Email'
+                        autoCorrect={false}
+                        onChangeText={setLogin}
+                        value= {login}
+                    />
+                    <TextInput style={styles.input} secureTextEntry={true} placeholder='Senha'
+                        autoCorrect={false}
+                        onChangeText={setSenha}
+                        value={senha}
+                    />
+                    <TouchableOpacity style={styles.btnSubmit}
+                        onPress={() => verLogin()}>
+                        <Text style={styles.txtSubmit}>Acessar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnRegister} onPress={() => navigation.navigate('CadastroUsuario')}>
+                        <Text style={styles.txtRegister}>Criar conta gratuita</Text>
+                    </TouchableOpacity>
+                </Animated.View>
             </View>
 
-            <Animated.View style={[
-                styles.container, {
-                    opacity: opacity,
-                    transform: [
-                        { translateY: offset.y }
-                    ]
-                }]}>
-
-                <TextInput style={styles.input} placeholder='Email'
-                    autoCorrect={false}
-                    onChangeText={setLogin}
-                    value= {login}
-                />
-                <TextInput style={styles.input} secureTextEntry={true} placeholder='Senha'
-                    autoCorrect={false}
-                    onChangeText={setSenha}
-                    value={senha}
-                />
-                <TouchableOpacity style={styles.btnSubmit}
-                    onPress={() => verLogin()}>
-                    <Text style={styles.txtSubmit}>Acessar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btnRegister} onPress={() => navigation.navigate('CadastroUsuario')}>
-                    <Text style={styles.txtRegister}>Criar conta gratuita</Text>
-                </TouchableOpacity>
-            </Animated.View>
-        </KeyboardAvoidingView>
     );
 }

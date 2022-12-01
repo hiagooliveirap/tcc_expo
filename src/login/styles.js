@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
     containerLogo: {
         justifyContent: 'center',
         marginTop: '40%',
+        marginBottom: 40,
+
     },
     container: {
         flex: 1,

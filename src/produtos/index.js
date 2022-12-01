@@ -68,7 +68,7 @@ export default function Produtos({ navigation, route }) {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.background}>
         <View style={styles.containerInput}>
           <Ionicons name='search-outline' size={20} color='#C5C5C6' />
@@ -123,6 +123,6 @@ export default function Produtos({ navigation, route }) {
           />
         </SafeAreaView>
       }      
-    </View>
+    </SafeAreaView>
   );
 }
