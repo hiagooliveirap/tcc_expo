@@ -64,12 +64,12 @@ export default function CadCliente({ navigation }) {
     return (
         <View style={styles.background}>
             
-                <View style={styles.containerLogo}>
+                {/* <View style={styles.containerLogo}>
                     <Animated.Image style={{
                         width: logo.x,
                         height: logo.y,}}
                     source={require('../../assets/Logo.png')} />
-                </View>
+                </View> */}
             <View style={styles.container}>
                 <TextInput style={styles.input} placeholder='Nome'
                     autoCorrect={false}

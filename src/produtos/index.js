@@ -37,7 +37,7 @@ export default function Produtos({ navigation, route }) {
   let hotdog = ''
   let porcao = ''
   let pizza = ''
-  let validar = ''
+  let validar = 0
   let tipoTudo = ''
   let tipoLanche = ''
   let tipoDog = ''
@@ -142,7 +142,7 @@ export default function Produtos({ navigation, route }) {
   const [produtos, setProdutos] = useState([]);
   const [total, setTotal]       = useState(0);
   const [page, setPage]         = useState(1);
-  const limit                   = 10;
+  const limit                   = 60;
   const [loading, setLoading] = useState(false);
 
   /* Função responsável de filtrar por categoria */
@@ -156,10 +156,18 @@ export default function Produtos({ navigation, route }) {
     setPesquisa(v);
     listaProduto(tipoSel, v);    
   }
+  
 
 /* Função responsável por listar os produtos */
   async function listaProduto(tipo, nome) {
     try {
+
+      if (loading) {
+        return
+      }
+
+      setLoading(true)
+
       let dadosBusca = {
         proNome: nome,
         cat_Id: tipo
@@ -169,13 +177,18 @@ export default function Produtos({ navigation, route }) {
         params: { page, limit }
         
       });
-      setProdutos(response.data.message);
       setQtdFav(response.data.nResults == 0 ? true : false);
+      
+      setProdutos(response.data.message);
+
+      setLoading(false)
+
     } catch (e) {
       setProdutos([]);
       console.log('erro' + e)
     }
   }
+
  
   /* Componente que renderiza e atualiza a página */
   useEffect(() => {
@@ -242,7 +255,7 @@ export default function Produtos({ navigation, route }) {
           <FlatList
             data={produtos}
             renderItem={({ item }) => <CardItemHorizontal item={item} navigation={navigation} id={id} />}
-            keyExtractor={item => item.proId}          
+            keyExtractor={item => item.proId} 
             style={styles.flat}
             showsVerticalScrollIndicator={false}
             showsHorizontalScrollIndicator={false}
