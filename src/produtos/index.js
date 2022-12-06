@@ -21,15 +21,6 @@ export default function Produtos({ navigation, route }) {
   const [tipoSel, setTipoSel]         = useState(0);
   const [pesquisa, setPesquisa]       = useState('');
   const [qtdFav, setQtdFav]           = useState(true);
-  // const [tipoProduto, setTipoProduto] = useState(
-  //   [
-  //     { id: 0, tipo: 'Tudo' },
-  //     { id: 1, tipo: 'Lanche' },
-  //     { id: 2, tipo: 'Cachorro Quente' },
-  //     { id: 3, tipo: 'Porção' },
-  //     { id: 4, tipo: 'Pizza' }
-  //   ]
-  // );
   
 
   let tudo = ''
@@ -217,17 +208,6 @@ export default function Produtos({ navigation, route }) {
       </View>
 
       <View style={styles.containerFiltros}>
-        {/* <TouchableOpacity style={styles.itemFiltrosSelecionado}> */}
-          {/* <Picker
-            selectedValue={tipoSel}
-            style={styles.itemFiltrosNaoSelecionado}
-            onValueChange={(itemValue) => filtraTipo(itemValue)}
-          >
-            {tipoProduto.map(tp => {
-              return <Picker.Item label={tp.tipo} value={tp.id} key={tp.id} />
-            })}
-          </Picker> */}
-        {/* </TouchableOpacity>   */}
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {tudo}     
 

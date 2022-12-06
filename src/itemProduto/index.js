@@ -84,8 +84,6 @@ export default function ItemProduto({ route, navigation}) {
     const produto = proId ? proId : pro_id
     const chave = usuId + '/' + produto
 
-    //console.log(usuId + ' XXXXXXXXXXXXXXXX ' + proId + ' XXXXXXXXXXXXXXXXXXXXX ' + pro_id)
-    console.log(produto)
     const [fav, setFav] = useState(false)
 
     async function addFav() {  
@@ -166,16 +164,11 @@ export default function ItemProduto({ route, navigation}) {
                         <Text style={styles.TextTitulo}>{route.params.item.proNome} ({route.params.item.tamNome})</Text>
                         <Text style={styles.TextPreco}>R$ {route.params.item.proPreco}</Text>
                     </View>
-                    {/* <View style={styles.avaliacao}>                    
-                    <Text style={styles.textAvaliacao}>4.3</Text>
-                    <Ionicons name='star' size={16} color='#FEC432' />                    
-                </View>        */}
 
                     <Text style={styles.TextDescricao}>{route.params.item.proDescricao}</Text>
                 </View>
             </View>
 
-            {/* <TouchableOpacity style={styles.containerFooter} onPress={() => Linking.openURL(zap)}> */}
             <TouchableOpacity style={styles.containerFooter} onPress={onOpen}>
                 <Image source={chamar} style={{ marginRight: 15}}/>
                 <Text style={{ color: '#FFF', fontSize: 17, fontWeight: 'bold' }}>Faça seu pedido!</Text>
@@ -188,9 +181,6 @@ export default function ItemProduto({ route, navigation}) {
                 <View style={{ width: '100%', height: '100%'}}>
                     <View style={styles.headerModal}>
                         <Text style={styles.textModalTitle}>Peça já o seu!</Text>
-                        {/* <TouchableOpacity>
-                            <Image source={closeModalImg} style={{ height: 16, width: 16, alignSelf: 'flex-end' }} />
-                        </TouchableOpacity> */}
                     </View>
 
                     {/* Zap */}
